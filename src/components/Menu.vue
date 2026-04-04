@@ -114,7 +114,7 @@ const handleSelect = () => {
       @click.self="emit('close')"
     >
       <div
-        class="mx-auto grid h-full max-h-full max-w-[1440px] grid-cols-1 gap-8 overflow-y-auto px-4 pb-12 pt-16 sm:px-6 sm:pt-20 min-[1025px]:gap-10 min-[1025px]:px-12 min-[1025px]:pt-[100px] xl:px-16"
+        class="mx-auto grid h-full max-h-full max-w-[1440px] grid-cols-1 gap-8 overflow-y-auto px-4 pb-12 pt-16 sm:px-6 sm:pt-20 min-[1025px]:gap-10 min-[1025px]:px-12 min-[1025px]:!pt-[150px] xl:px-16"
         :class="
           activeMainItem.type === 'products'
             ? 'xl:grid-cols-[220px_280px_320px_minmax(0,1fr)]'

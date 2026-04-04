@@ -11,12 +11,15 @@ defineProps<{
   <div class="min-w-0 max-w-[520px]">
     <div
       v-if="image"
-      class="mb-8 overflow-hidden rounded-[14px] bg-black/5"
+      class="mb-8 overflow-hidden rounded-[14px]"
     >
       <img
         :src="image"
         :alt="title"
-        class="h-[280px] w-full object-cover"
+        :class="[
+          'w-full object-cover',
+          $props.specs?.length ? 'h-auto' : 'h-[280px]'
+        ]"
       />
     </div>
 

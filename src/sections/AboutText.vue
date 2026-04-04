@@ -100,7 +100,7 @@ onMounted(() => {
       <!-- Изображение -->
       <div class="mt-12">
         <img
-          src="/images/about/about-t.jpg"
+          src="/images/about/about-w.jpg"
           alt="Pixanta production"
           class="mx-auto w-full rounded-[6px] shadow-md"
         />
