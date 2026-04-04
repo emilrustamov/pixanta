@@ -23,10 +23,10 @@ if (!pageData.value) {
 </script>
 
 <template>
-  <div v-if="pageData">
+  <template v-if="pageData">
     <VideoScrollSecion :hero="pageData.hero" />
-  </div>
     <MarketText :intro="pageData.intro" :form="pageData.form" />
     <InspiringSection :inspiring="pageData.inspiring" />
     <ProductsSection :products="pageData.products" />
+  </template>
 </template>

@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="max-w-[520px]">
+  <div class="min-w-0 max-w-[520px]">
     <div
       v-if="image"
       class="mb-8 overflow-hidden rounded-[14px] bg-black/5"
@@ -20,7 +20,7 @@ defineProps<{
       />
     </div>
 
-    <h3 class="mb-4 font-oswald text-[42px] leading-none text-text">
+    <h3 class="mb-4 font-oswald text-[28px] leading-tight text-text sm:text-[36px] lg:text-[42px] lg:leading-none">
       {{ title }}
     </h3>
 

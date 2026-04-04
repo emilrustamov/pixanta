@@ -41,56 +41,51 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 z-[100] w-full transition-transform duration-300"
-    :class="isVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full'">
-    <div class="mx-auto w-full px-4 sm:px-6 lg:px-10 xl:px-20">
-      <!-- Mobile / Tablet -->
-      <div class="flex h-[72px] items-center justify-between lg:hidden">
+  <header
+    class="fixed top-0 left-0 z-[100] w-full border-b border-white/10 bg-[#1f1f1f] shadow-[0_1px_0_rgba(0,0,0,0.15)] transition-transform duration-300"
+    :class="isVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full'"
+  >
+    <div class="mx-auto w-full px-4 sm:px-6 min-[1025px]:px-10 xl:px-20">
+      <div class="flex h-12 items-center justify-between min-[1025px]:hidden">
         <router-link to="/" class="flex items-center shrink-0">
-          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-10 w-auto mr-2" />
+          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-8 w-auto mr-2" />
         </router-link>
 
-        <div class="flex items-center gap-2">
-          <button class="flex h-[26px] w-[26px] items-center justify-center" aria-label="Search">
-            <span class="material-symbols-outlined !text-[26px] text-secondary-grey">
-              search
-            </span>
-          </button>
-
-          <button class="flex h-[26px] w-[26px] items-center justify-center" aria-label="Menu" @click="toggleMenu">
-            <span class="material-symbols-outlined !text-[26px] text-primary">
-              {{ isMenuOpen ? 'close' : 'menu' }}
-            </span>
-          </button>
-        </div>
+        <button
+          type="button"
+          class="flex h-8 w-8 shrink-0 items-center justify-center"
+          aria-label="Menu"
+          @click="toggleMenu"
+        >
+          <span class="material-symbols-outlined !text-[22px] text-primary">
+            {{ isMenuOpen ? 'close' : 'menu' }}
+          </span>
+        </button>
       </div>
 
-      <!-- Desktop -->
-      <div class="hidden h-[140px] items-center justify-between lg:flex">
+      <div class="hidden h-[92px] items-center justify-between min-[1025px]:flex">
         <router-link to="/" class="flex items-center shrink-0">
-          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-10 w-auto mr-2" />
+          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-9 w-auto mr-2" />
         </router-link>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
           <button
-            class="flex h-[44px] min-w-[146px] items-center justify-center rounded-full px-6 text-lg font-semibold uppercase tracking-wide text-white transition font-main"
-            :class="isMenuOpen ? 'bg-primary' : 'bg-secondary-grey hover:bg-primary'" @click="toggleMenu">
+            type="button"
+            class="flex h-10 min-w-[118px] items-center justify-center rounded-full border-2 border-primary/80 bg-primary px-4 text-base font-semibold uppercase tracking-wide text-white shadow-[0_3px_10px_rgba(255,102,0,0.35)] transition font-main hover:brightness-110 hover:shadow-[0_4px_14px_rgba(255,102,0,0.45)]"
+            @click="toggleMenu"
+          >
             Menu
-            <span class="material-symbols-outlined text-[28px] text-white ml-2">
+            <span class="material-symbols-outlined ml-1.5 text-[22px] text-white">
               {{ isMenuOpen ? 'close' : 'menu' }}
             </span>
           </button>
 
-          <a href="#"
-            class="flex h-[44px] min-w-[146px] items-center justify-center rounded-full bg-secondary-grey px-6 text-lg font-semibold uppercase tracking-wide text-white transition hover:bg-primary font-main">
+          <router-link
+            to="/contact"
+            class="flex h-10 min-w-[118px] items-center justify-center rounded-full border-2 border-white bg-white px-4 text-base font-semibold uppercase tracking-wide text-[#1f1f1f] transition font-main hover:border-primary hover:bg-primary hover:text-white"
+          >
             Contact
-          </a>
-
-          <button class="flex h-[44px] w-[44px] items-center justify-center bg-primary rounded-full">
-            <span class="material-symbols-outlined text-[30px] text-white">
-              search
-            </span>
-          </button>
+          </router-link>
         </div>
       </div>
     </div>

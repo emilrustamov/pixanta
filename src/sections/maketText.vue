@@ -34,7 +34,7 @@ import FormSection from '../sections/FormSection.vue'
 
         <!-- FORM -->
         <div class="w-full lg:w-[30%] flex-shrink-0">
-            <div class="flex h-[72px] md:h-[52px] min-w-[110px] items-center justify-start rounded-[10px] bg-primary px-8 text-[24px] font-main font-semibold uppercase text-white transition mb-5">
+            <div class="flex min-h-[52px] items-center justify-start rounded-[10px] bg-primary px-4 py-3 text-[14px] font-main font-semibold uppercase leading-tight text-white transition sm:px-8 sm:text-[18px] lg:text-[24px] mb-5">
                 CONTACT US FOR MORE DETAILS
             </div>
           <FormSection :cols="1" />

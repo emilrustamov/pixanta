@@ -114,11 +114,11 @@ const handleSelect = () => {
       @click.self="emit('close')"
     >
       <div
-        class="mx-auto h-full max-w-[1440px] px-16 pb-12 pt-[150px]"
+        class="mx-auto grid h-full max-h-full max-w-[1440px] grid-cols-1 gap-8 overflow-y-auto px-4 pb-12 pt-16 sm:px-6 sm:pt-20 min-[1025px]:gap-10 min-[1025px]:px-12 min-[1025px]:pt-[100px] xl:px-16"
         :class="
           activeMainItem.type === 'products'
-            ? 'grid grid-cols-[220px_280px_320px_1fr] gap-10'
-            : 'grid grid-cols-[220px_320px_1fr] gap-10'
+            ? 'xl:grid-cols-[220px_280px_320px_minmax(0,1fr)]'
+            : 'min-[1025px]:grid-cols-[220px_minmax(0,320px)_minmax(0,1fr)]'
         "
       >
         <MegaMenuSidebar

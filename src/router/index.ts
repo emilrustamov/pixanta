@@ -7,10 +7,12 @@ import Contact from '../pages/Contact.vue'
 import Markets from '../pages/Markets.vue'
 import { marketPages } from '../data/maketsPage'
 import Products from '../pages/Products.vue'
+import PrivacyPolicy from '../pages/PrivacyPolicy.vue'
 
 const routes = [
   { path: '/', component: Home, meta: { title: 'Home' } },
   { path: '/about-us', component: About, meta: { title: 'About Us' } },
+  { path: '/privacy-policy', component: PrivacyPolicy, meta: { title: 'Privacy Policy' } },
   { path: '/contact', component: Contact, meta: { title: 'Contact' } },
   // 🔥 ГЛАВНОЕ
   { path: '/markets/:slug', name: 'market', component: OneMarket },
@@ -23,7 +25,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) return savedPosition
     return { top: 0 }
   },

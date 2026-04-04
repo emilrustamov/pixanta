@@ -40,7 +40,8 @@ const getColSpan = (index: number) => {
       <div
         v-for="(item, index) in markets"
         :key="index"
-        class="group cursor-pointer lg:col-span-2"
+        class="group cursor-pointer"
+        :class="getColSpan(index)"
         @click="goToMarket(item.href)"
         tabindex="0"
         @keydown.enter="goToMarket(item.href)"

@@ -6,8 +6,8 @@ defineProps<{
 
 <template>
   <section class=" border-b border-location-grey/40">
-    <div class="mx-auto max-w-[1600px]">
-      <div class="flex h-[51px] w-full items-center justify-start gap-1 text-[16px] text-location-grey font-simple">
+    <div class="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
+      <div class="flex min-h-[51px] w-full min-w-0 flex-wrap items-center justify-start gap-x-1 gap-y-1 py-2 text-[14px] text-location-grey font-simple sm:h-[51px] sm:py-0 sm:text-[16px]">
         <span class="inline-flex items-center justify-center shrink-0 mb-1">
           <svg
             width="24"

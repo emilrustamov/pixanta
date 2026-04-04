@@ -75,7 +75,7 @@ const goToPage = (page: number) => {
     requestAnimationFrame(() => {
         if (!productsSection.value) return
 
-        const offset = 120
+        const offset = 96
         const top =
             productsSection.value.getBoundingClientRect().top +
             window.pageYOffset -
@@ -108,15 +108,15 @@ watch(activeCategory, () => {
     <section ref="productsSection" class="relative w-full pt-14 md:pt-20">
         <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
             <!-- filters -->
-            <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pb-8">
+            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 pb-8 sm:gap-x-8 sm:gap-y-4">
                 <template v-for="(category, idx) in categories" :key="category.key">
                     <button type="button" @click="activeCategory = category.key"
-                        class="font-main text-[24px] uppercase transition font-medium"
+                        class="font-main text-[16px] uppercase transition font-medium sm:text-[20px] lg:text-[24px]"
                         :class="activeCategory === category.key ? 'text-primary' : 'text-text'">
                         {{ category.label }}
                     </button>
                     <span v-if="idx < categories.length - 1"
-                        class="mx-2 mb-1 text-text text-[24px] font-medium select-none">|</span>
+                        class="mx-1 mb-1 text-text text-[16px] font-medium select-none sm:mx-2 sm:text-[20px] lg:text-[24px]">|</span>
                 </template>
             </div>
         </div>

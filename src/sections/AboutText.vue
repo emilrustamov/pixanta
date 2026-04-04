@@ -304,7 +304,7 @@ onMounted(() => {
             <img
               :src="item.icon"
               :alt="item.title"
-              class="w-[316px] h-[316px] object-contain transition duration-300 group-hover:scale-110"
+              class="h-auto w-full max-h-[min(100%,280px)] max-w-[min(100%,316px)] object-contain transition duration-300 group-hover:scale-110 sm:max-h-[min(100%,316px)]"
             />
           </div>
 

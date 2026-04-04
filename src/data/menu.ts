@@ -195,16 +195,11 @@ export type MenuSeriesItem = {
       type: 'default',
       categories: [
         {
-          title: 'Company Profile',
-          href: '/about-us/company-profile',
-          previewImage: '/images/menu/company-profile.jpg',
-          previewDescription: 'Learn more about the company, production capabilities and global LED display solutions.',
-        },
-        {
-          title: 'Blog',
-          href: '/about-us/blog',
-          previewImage: '/images/menu/blog.jpg',
-          previewDescription: 'News, updates and articles about products, projects and the LED display market.',
+          title: 'About us',
+          href: '/about-us',
+          previewImage: '/images/about/about-t.jpg',
+          previewDescription:
+            'Learn more about Pixanta, production capabilities and global LED display solutions.',
         },
       ],
     },
