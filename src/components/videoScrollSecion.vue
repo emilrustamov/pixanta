@@ -102,6 +102,7 @@ onBeforeUnmount(() => {
           <video
             v-if="props.hero.mediaType === 'video'"
             :src="props.hero.media"
+            preload="metadata"
             autoplay
             muted
             loop
@@ -113,6 +114,8 @@ onBeforeUnmount(() => {
             v-else
             :src="props.hero.media"
             :alt="props.hero.title"
+             loading="lazy"
+             decoding="async"
             class="h-full w-full object-cover"
           />
 

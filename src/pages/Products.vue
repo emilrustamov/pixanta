@@ -178,7 +178,11 @@ onMounted(() => {
                     <!-- image -->
                     <div
                         class="flex h-[260px] items-center justify-center overflow-hidden bg-white p-6 sm:h-[300px] lg:h-[320px]">
-                        <img :src="item.image" :alt="item.title"
+                        <img 
+                        :src="item.image" 
+                        :alt="item.title"
+                        loading="lazy"
+                        decoding="async"
                             class="max-h-full w-auto max-w-full object-contain transition duration-300 group-hover:scale-[1.03]" />
                     </div>
 

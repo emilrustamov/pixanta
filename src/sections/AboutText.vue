@@ -102,6 +102,8 @@ onMounted(() => {
         <img
           src="/images/about/about-w.jpg"
           alt="Pixanta production"
+                  loading="lazy"
+        decoding="async"
           class="mx-auto w-full rounded-[6px] shadow-md"
         />
       </div>

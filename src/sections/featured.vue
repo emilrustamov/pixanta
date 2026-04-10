@@ -68,7 +68,7 @@ const toggle = (index: number) => {
                   <div class="w-full flex justify-center md:w-1/2"
                     :class="index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'">
                     <div class="overflow-hidden inline-block rounded-[10px] bg-[#f3f3f3]">
-                      <img :src="item.image" :alt="item.title" class="h-auto w-[320px] object-cover px-6 py-3" />
+                      <img :src="item.image" :alt="item.title" loading="lazy" decoding="async" class="h-auto w-[320px] object-cover px-6 py-3" />
                     </div>
                   </div>
                 </div>

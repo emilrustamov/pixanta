@@ -94,7 +94,7 @@ const onNextMobile = () => mobileSwiper.value?.slideNext()
               <!-- right image -->
               <div class="w-full">
                 <div class="h-full overflow-hidden rounded-[10px]">
-                  <img :src="item.image" :alt="item.title" class="h-full min-h-[520px] w-full object-cover"
+                  <img :src="item.image" :alt="item.title"  loading="lazy" decoding="async" class="h-full min-h-[520px] w-full object-cover"
                     draggable="false" />
                 </div>
               </div>
@@ -119,7 +119,7 @@ const onNextMobile = () => mobileSwiper.value?.slideNext()
 
               <!-- image сразу после текста -->
               <div class="mt-6 overflow-hidden rounded-[10px]">
-                <img :src="item.image" :alt="item.title" class="h-[320px] w-full object-cover sm:h-[420px]"
+                <img :src="item.image" :alt="item.title"  loading="lazy" decoding="async" class="h-[320px] w-full object-cover sm:h-[420px]"
                   draggable="false" />
               </div>
 

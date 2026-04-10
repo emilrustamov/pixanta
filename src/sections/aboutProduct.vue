@@ -72,7 +72,7 @@ const nextSlide = () => {
                     <div class="p-6 sm:p-8">
                         <div class="relative h-[300px] md:h-[520px] overflow-hidden flex items-center justify-center">
                             <!-- image -->
-                            <img v-if="currentSlide?.type === 'image'" :src="currentSlide.src" alt=""
+                            <img v-if="currentSlide?.type === 'image'" :src="currentSlide.src" alt=""  loading="lazy"  decoding="async"
                                 class="max-h-full max-w-full object-contain"/>
 
                             <!-- video poster -->

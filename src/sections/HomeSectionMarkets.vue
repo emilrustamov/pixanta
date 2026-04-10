@@ -43,7 +43,7 @@ const getColSpan = (index: number) => {
                     :class="getColSpan(index)" @click="goToMarket(item.href)" tabindex="0"
                     @keydown.enter="goToMarket(item.href)" role="button" :aria-label="`Go to ${item.title}`">
                     <!-- Image -->
-                    <img :src="item.previewImage" :alt="item.title"
+                    <img :src="item.previewImage" :alt="item.title "  loading="lazy" decoding="async"
                         class="h-[180px] w-full object-cover sm:h-[220px] lg:h-[260px] xl:h-[320px] 2xl:h-[420px] transition duration-500 group-hover:scale-105" />
 
                     <!-- Overlay -->
