@@ -1,27 +1,30 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watch, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import PageLocation from '../components/PageLocation.vue';
 import { productsData } from '../data/products'
 import { menuData } from '../data/menu'
 
+const route = useRoute()
+const router = useRouter()
 const productsMenu = menuData.find(item => item.key === 'products')
 const productCategories = productsMenu?.categories ?? []
 const activeCategory = ref('all')
 const currentPage = ref(1)
 const perPage = 9
 const productsSection = ref<HTMLElement | null>(null)
-const activeCategoryData = computed(() => {
+    const activeCategoryData = computed(() => {
     if (activeCategory.value === 'all') {
         return {
             title: '',
-            description:
-                '',
+            description: '',
         }
     }
 
-    const currentCategory = productCategories.find(category =>
-        category.href.split('/').pop() === activeCategory.value
-    )
+    const currentCategory = productCategories.find(category => {
+        const hash = category.href.split('#')[1]?.toLowerCase()
+        return hash === activeCategory.value
+    })
 
     return {
         title: currentCategory?.title ?? 'PRODUCT RANGE',
@@ -88,15 +91,44 @@ const goToPage = (page: number) => {
     })
 }
 
+const syncCategoryFromHash = () => {
+    const hash = route.hash.replace('#', '').toLowerCase()
+
+    if (!hash) {
+        activeCategory.value = 'all'
+        return
+    }
+
+    const exists = categories.value.some(category => category.key === hash)
+    activeCategory.value = exists ? hash : 'all'
+}
+
+const setCategory = (key: string) => {
+    activeCategory.value = key
+    currentPage.value = 1
+
+    router.replace({
+        path: '/products',
+        hash: key === 'all' ? '' : `#${key}`,
+    })
+}
+
 watch(activeCategory, () => {
     currentPage.value = 1
+})
+watch(() => route.hash, () => {
+    syncCategoryFromHash()
+})
+
+onMounted(() => {
+    syncCategoryFromHash()
 })
 
 </script>
 <template>
     <section class="relative">
         <div class="banner relative w-full  bg-cover bg-center"
-            :style="{ backgroundImage: 'url(/images/contact/contact-banner.webp)' }">
+            :style="{ backgroundImage: 'url(/images/new.jpg)' }">
             <div class="absolute inset-0 flex items-center justify-center text-white">
             </div>
         </div>
@@ -110,8 +142,8 @@ watch(activeCategory, () => {
             <!-- filters -->
             <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 pb-8 sm:gap-x-8 sm:gap-y-4">
                 <template v-for="(category, idx) in categories" :key="category.key">
-                    <button type="button" @click="activeCategory = category.key"
-                        class="font-main text-[16px] uppercase transition font-medium sm:text-[20px] lg:text-[24px]"
+                    <button type="button" @click="setCategory(category.key)"
+                        class="font-main text-[20px] uppercase transition font-medium md:text-[24px]"
                         :class="activeCategory === category.key ? 'text-primary' : 'text-text'">
                         {{ category.label }}
                     </button>
@@ -124,10 +156,12 @@ watch(activeCategory, () => {
         <div class="relative bg-[#f5f5f5] w-full py-8 mx-auto">
             <!-- triangle -->
             <div class="absolute left-1/2 top-0 -translate-x-1/2
-           border-l-[42px] border-r-[42px] border-t-[42px]
+           border-l-[28px] border-r-[28px] border-t-[28px]
+           md:border-l-[42px] md:border-r-[28px] md:border-t-[28px]
            border-l-transparent border-r-transparent border-t-white z-3"></div>
             <div class="mx-auto max-w-[1100px] text-center mt-12">
                 <h2>
+          
                     {{ activeCategoryData.title }}
                 </h2>
 
@@ -138,7 +172,7 @@ watch(activeCategory, () => {
             </div>
             <!-- cards -->
             <div
-                class="max-w-[1600px] mx-auto mt-[160px] mb-12 px-6 grid grid-cols-1 gap-6 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3">
+                class="max-w-[1600px] mx-auto  mt-[50px] md:mt-[70px] mb-12 px-6 grid grid-cols-1 gap-6 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3">
                 <router-link v-for="item in paginatedProducts" :key="item.slug" :to="item.href"
                     class="group flex h-full flex-col overflow-hidden rounded-[10px] border border-[#d9d9d9] bg-white transition hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
                     <!-- image -->

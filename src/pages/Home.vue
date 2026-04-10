@@ -11,61 +11,73 @@ const slides = [
     id: 1,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide1.webp',
+    image: '/images/slides/banner-BX.jpg',
   },
   {
     id: 2,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide2.webp',
+    image: '/images/slides/banner-FLM.jpg',
   },
   {
     id: 3,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide3.webp',
+    image: '/images/slides/banner-FTX.jpg',
   },
   {
     id: 3,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide4.webp',
+    image: '/images/slides/banner-GLD.jpg',
   },
   {
     id: 4,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide5.webp',
+    image: '/images/slides/banner-HDC.jpg',
   },
   {
     id: 5,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide6.webp',
+    image: '/images/slides/banner-HDG.jpg',
   },
   {
     id: 6,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide7.webp',
+    image: '/images/slides/banner-LFD.jpg',
   },
   {
     id: 7,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide1.webp',
+    image: '/images/slides/banner-LTD.jpg',
   },
   {
     id: 8,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide8.webp',
+    image: '/images/slides/banner-MFM.jpg',
   },
   {
     id: 9,
     title: '',
     subtitle: '',
-    image: '/images/slides/slide9.webp',
+    image: '/images/slides/banner-RTX.jpg',
+  },
+  {
+    id: 10,
+    title: '',
+    subtitle: '',
+    image: '/images/slides/banner-slm.jpg',
+  },
+  {
+    id: 11,
+    title: '',
+    subtitle: '',
+    image: '/images/slides/banner-SPL.jpg',
   },
 ]
 </script>
@@ -80,24 +92,17 @@ const slides = [
       }" class="home-hero-swiper">
       <SwiperSlide v-for="slide in slides" :key="slide.id">
         
-        <div class="relative w-full aspect-[16/9] bg-cover bg-center"
-          :style="{ backgroundImage: `url(${slide.image})` }">
+        <div 
+          class="relative w-full overflow-hidden"
+        >
+          <img 
+            :src="slide.image" 
+            alt="" 
+            class="w-full h-full object-contain object-center"
+            draggable="false"
+          >
+ 
           <div class="absolute inset-0 bg-black/10"></div>
-
-          <div
-            class="relative mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-10 xl:px-16">
-            <!-- <h1
-              class="max-w-[1320px] font-main text-[42px] leading-[0.95] text-white sm:text-[64px] lg:text-[96px]"
-            >
-              {{ slide.title }}
-            </h1>
-
-            <p
-              class="mt-8 inline-flex min-h-[76px] items-center justify-center rounded-[999px] bg-white/15 px-8 font-main text-[22px] leading-none text-white backdrop-blur-sm sm:text-[28px] lg:min-h-[92px] lg:px-14 lg:text-[40px]"
-            >
-              {{ slide.subtitle }}
-            </p> -->
-          </div>
         </div>
       </SwiperSlide>
     </Swiper>
@@ -120,5 +125,16 @@ const slides = [
 
 :deep(.home-hero-swiper .swiper-pagination-bullet-active) {
   opacity: 1;
+}
+@media(max-width:1000px){
+  :deep(.home-hero-swiper .swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: white;
+  opacity: 0.55;
+}
+:deep(.home-hero-swiper .swiper-pagination) {
+  bottom: 6px;
+}
 }
 </style>

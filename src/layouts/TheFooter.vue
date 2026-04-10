@@ -1,26 +1,18 @@
 <script setup lang="ts">
 const products = [
-    { label: 'Indoor COB Fine Pitch', to: '/products' },
-    { label: 'SMD Indoor Fixed', to: '/products' },
-    { label: 'All in one', to: '/products' },
-    { label: 'Outdoor Fixed', to: '/products' },
-    { label: 'Staging & Rentals', to: '/products' },
-    { label: 'Mobile Billboard', to: '/products' },
-    { label: 'Sports', to: '/products' },
-    { label: 'Creative', to: '/products' },
+    { label: 'Outdoor', to: '/products#outdoor' },
+    { label: 'Rental', to: '/products#rental' },
+    { label: 'Indoor', to: '/products#indoor' },
+    { label: 'Floor', to: '/products#floor' },
+    { label: 'Glass', to: '/products#glass' },
 ]
 
 const solutions = [
-    { label: 'DOOH', to: '/markets' },
-    { label: 'Rentals & Staging', to: '/markets' },
-    { label: 'Retail & Hospitality', to: '/markets' },
-    { label: 'XR & Virtual Production', to: '/markets' },
-    { label: 'Broadcast Studio', to: '/markets' },
-    { label: 'Command & Control Room', to: '/markets' },
-    { label: 'Higher Education', to: '/markets' },
-    { label: 'Sports & Arenas', to: '/markets' },
-    { label: 'Commercial Corporate', to: '/markets' },
-    { label: 'Creative LED Solution', to: '/markets' },
+    { label: 'Outdoor Digital (DOOH)', to: '/markets/outdoor' },
+    { label: 'Evenets & Rentals', to: '/markets/rental' },
+    { label: 'Creative Indoor LED', to: '/markets/indoor' },
+    { label: 'XR & Virtual Studios', to: '/markets/floor' },
+    { label: 'Transparent Glass Led', to: '/markets/glass' },
 ]
 
 const aboutLinks = [
@@ -67,7 +59,7 @@ const socials = [
 
                     <div class="space-y-2 font-simple text-[14px] leading-7 text-white/85 xl:space-y-3 xl:text-[16px] xl:leading-8">
                         <p>Phone: +86-371-88887233</p>
-                        <p>Email: sales@canbest-led.com</p>
+                        <p>Email: pixanta-led-displays.com</p>
                         <p>WhatsApp: +86 13418683708</p>
 
                         <div class="">

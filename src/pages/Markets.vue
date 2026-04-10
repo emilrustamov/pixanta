@@ -6,7 +6,7 @@ import FormSection from '../sections/FormSection.vue';
 <template>
     <section class="relative">
         <div class="banner relative w-full  bg-cover bg-center"
-            :style="{ backgroundImage: 'url(/images/contact/contact-banner.webp)' }">
+            :style="{ backgroundImage: 'url(/images/new.jpg)' }">
             <div class="absolute inset-0 flex items-center justify-center text-white">
             </div>
         </div>
@@ -17,7 +17,7 @@ import FormSection from '../sections/FormSection.vue';
         { label: 'Markets' }
     ]" />
     <MarketsCardGrid />
-    <section class="bg-white px-4 py-12 sm:px-6 lg:px-10 xl:px-16 2xl:px-24">
+    <section class="bg-white px-4 py-10 sm:px-6 lg:px-10 xl:px-16 2xl:px-24">
         <div class="mx-auto max-w-[1600px]">
             <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 

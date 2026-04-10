@@ -1,6 +1,6 @@
 export type MenuSeriesItem = {
     title: string
-    href: string
+    slug: string
     image: string
     description: string
     specs?: string[]
@@ -31,26 +31,26 @@ export type MenuSeriesItem = {
       categories: [
         {
           title: 'Outdoor',
-          href: '/products/outdoor',
+          href: '/products#outdoor',
           previewDescription: 'Outdoor LED display solutions for exterior advertising, stadium perimeter and media facade applications.',
           series: [
             {
               title: 'BX Series',
-              href: '/products/outdoor/bx',
+              slug: 'bx-series',
               image: '/images/products/bx-1.png',
               description: 'With modular front access, maintenance becomes faster and easier — no need for rear space or complex tools. The display adopts a standard 1000×1000mm cabinet, available in pure black or pure white, ensuring a clean and modern look for any installation.',
               specs: ['P3.9', 'P4.8', 'P6.25', 'P10.4'],
             },
             {
               title: 'SPL Series',
-              href: '/products/outdoor/spl',
+              slug: 'spl-series',
               image: '/images/products/2.png',
               description: 'Stadium perimeter LED display designed for sports environments and player protection.',
               specs: ['P6', 'P10'],
             },
             {
               title: 'MFM Series',
-              href: '/products/outdoor/mfm',
+              slug: 'mfm-series',
               image: '/images/products/3.png',
               description: 'Media facade mesh with high transparency and flexible configuration for large-scale facade visuals.',
               specs: ['P15.625', 'P31.25', 'P42', 'P50', 'P62.5', 'P88', 'P100'],
@@ -59,19 +59,19 @@ export type MenuSeriesItem = {
         },
         {
           title: 'Rental',
-          href: '/products/rental',
+          href: '/products#rental',
           previewDescription: 'Rental LED solutions for stage, event, curved and modular display configurations.',
           series: [
             {
               title: 'RTX Series',
-              href: '/products/rental/rtx',
+              slug: 'rtx-series',
               image: '/images/products/4.png',
               description: 'Versatile indoor and outdoor rental LED display with front and rear maintenance.',
               specs: ['P2.6', 'P2.97', 'P3.91'],
             },
             {
               title: 'FTX Series',
-              href: '/products/rental/ftx',
+              slug: 'ftx-series',
               image: '/images/products/5.png',
               description: 'Flexible rental LED display for curved, circular and custom stage configurations.',
               specs: ['P2.6', 'P2.97', 'P3.91'],
@@ -80,40 +80,40 @@ export type MenuSeriesItem = {
         },
         {
           title: 'Indoor',
-          href: '/products/indoor',
+          href: '/products#indoor',
           previewDescription: 'Indoor LED cabinets, COB, GOB, transparent and flexible module solutions.',
           series: [
             {
               title: 'SLM Series',
-              href: '/products/indoor/slm',
+              slug: 'slm-series',
               image: '/images/products/6.png',
               description: 'Slim light modular cabinet with quick installation and frontal maintenance.',
               specs: ['P1.8', 'P2.0', 'P2.5'],
             },
             {
               title: 'HDC Series',
-              href: '/products/indoor/hdc',
+              slug: 'hdc-series',
               image: '/images/products/7.png',
               description: 'High definition COB LED display with integrated cabinet design and strong visual performance.',
               specs: ['P0.7', 'P0.9', 'P1.2', 'P1.5'],
             },
             {
               title: 'FLM Series',
-              href: '/products/indoor/flm',
+              slug: 'flm-series',
               image: '/images/products/8.png',
               description: 'Flexible LED module for curved surfaces, creative forms and custom installations.',
               specs: ['P0.9', 'P1.2', 'P1.56', 'P1.8', 'P2', 'P2.5', 'P3', 'P4'],
             },
             {
               title: 'HDG Series',
-              href: '/products/indoor/hdg',
+              slug: 'hdg-series',
               image: '/images/products/9.png',
               description: 'High definition GOB LED display with durable protective surface and frontal service.',
               specs: ['P1.2', 'P1.5', 'P1.8', 'P2', 'P2.5'],
             },
             {
               title: 'LTD Series',
-              href: '/products/indoor/ltd',
+              slug: 'ltd-series',
               image: '/images/products/10.png',
               description: 'Louver transparent LED display for glass curtain walls and transparent media surfaces.',
               specs: ['P3.9', 'P8', 'P10', 'P16'],
@@ -122,12 +122,12 @@ export type MenuSeriesItem = {
         },
         {
           title: 'Floor',
-          href: '/products/floor',
+          href: '/products#floor',
           previewDescription: 'Interactive and heavy-duty LED floor display solutions.',
           series: [
             {
               title: 'LFD Series',
-              href: '/products/floor/lfd',
+              slug: 'lfd-series',
               image: '/images/products/11.png',
               description: 'LED floor display with high load-bearing performance for stage, museum and venue use.',
               specs: ['P2.5', 'P2.6', 'P2.9', 'P3.9'],
@@ -136,12 +136,12 @@ export type MenuSeriesItem = {
         },
         {
           title: 'Glass',
-          href: '/products/glass',
+          href: '/products#glass',
           previewDescription: 'Glass LED display systems with transparency and architectural integration.',
           series: [
             {
               title: 'GLD Series',
-              href: '/products/glass/gld',
+              slug: 'gld-series',
               image: '/images/products/12.png',
               description: 'Glass LED display solution for storefronts, facades and transparent building installations.',
               specs: ['P6', 'P8', 'P10', 'P16', 'P20', 'P25', 'P30', 'P40', 'P50', 'P60'],

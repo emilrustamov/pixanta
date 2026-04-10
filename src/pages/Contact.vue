@@ -5,7 +5,7 @@ import FormSection from '../sections/FormSection.vue';
 <template>
   <section class="relative">
     <div class="banner relative w-full  bg-cover bg-center"
-      :style="{ backgroundImage: 'url(/images/contact/contact-banner.webp)' }">
+      :style="{ backgroundImage: 'url(/images/new.jpg)' }">
       <div class="absolute inset-0 flex items-center justify-center text-white">
       </div>
     </div>
@@ -16,7 +16,7 @@ import FormSection from '../sections/FormSection.vue';
     { label: 'Contact' }
   ]" />
   
-  <section class="w-full py-12 md:py-16 lg:py-20">
+  <section class="w-full py-10 md:py-16 lg:py-20">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
         
@@ -26,7 +26,7 @@ import FormSection from '../sections/FormSection.vue';
             BRING YOUR VISION TO LIFE WITH CANBEST LED!
           </h2>
 
-          <p class="mt-8 font-simple text-text text-[18px] font-light leading-relaxed">
+          <p class="mt-5 md:mt-8 font-simple text-text text-[18px] font-light leading-relaxed">
             Discover how our state-of-the-art LED wall solutions can transform your space with
             vibrant, high-quality led displays. Whether it’s for advertising, broadcasting,
             events, or custom projects, we’re here to help.

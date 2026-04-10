@@ -77,15 +77,13 @@ onBeforeUnmount(() => {
             transform: `scale(${titleScale})`,
           }"
         >
-          <h1
-            class="font-main uppercase text-text leading-none text-[54px] sm:text-[72px] md:text-[110px] lg:text-[150px] xl:text-[180px]"
-          >
-            {{ props.hero.title }}
-          </h1>
+        <h1 class="main font-main font-bold text-text leading-none uppercase text-center flex items-end justify-center min-h-[30vh]">
+          {{ props.hero.title }}
+        </h1>
 
           <p
             v-if="props.hero.subtitle"
-            class="mt-5 font-simple uppercase tracking-[1px] text-third-grey text-[11px] sm:text-[12px] md:text-[13px]"
+            class="mt-5 font-simple uppercase tracking-[1px] text-text font-light text-[11px] sm:text-[12px] md:text-[13px]"
           >
             {{ props.hero.subtitle }}
           </p>
@@ -134,6 +132,9 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+.main{
+  font-size: clamp(2.25rem, 1.431rem + 3.5vw, 5.625rem);
+}
 .hero-chevron {
   width: 18px;
   height: 18px;

@@ -8,6 +8,7 @@ import Markets from '../pages/Markets.vue'
 import { marketPages } from '../data/maketsPage'
 import Products from '../pages/Products.vue'
 import PrivacyPolicy from '../pages/PrivacyPolicy.vue'
+import OneProduct from '../pages/OneProduct.vue'
 
 const routes = [
   { path: '/', component: Home, meta: { title: 'Home' } },
@@ -17,18 +18,38 @@ const routes = [
   // 🔥 ГЛАВНОЕ
   { path: '/markets/:slug', name: 'market', component: OneMarket },
   { path: '/markets', name: 'markets', component: Markets},
-  { path: '/products', name: 'products', component: Products},
+  { path: '/products', name: 'products', component: Products, meta: { forceTopOnHash: true } },
+  { path: '/products/:slug', name: 'product', component: OneProduct },
   // ❗ fallback
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes,
+//   scrollBehavior(_to, _from, savedPosition) {
+//     if (savedPosition) return savedPosition
+//     return { top: 0 }
+//   },
+// })
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(_to, _from, savedPosition) {
-    if (savedPosition) return savedPosition
+  scrollBehavior(to, from, savedPosition) {
+    if (to.meta.forceTopOnHash) {
+      return { top: 0 }
+    }
+  
+    // обычный hash (для других страниц)
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  
     return { top: 0 }
-  },
+  }
 })
 
 /**
@@ -52,3 +73,4 @@ router.afterEach((to) => {
 })
 
 export default router
+

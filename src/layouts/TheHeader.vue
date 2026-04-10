@@ -48,7 +48,7 @@ onBeforeUnmount(() => {
     <div class="mx-auto w-full px-4 sm:px-6 min-[1025px]:px-10 xl:px-20">
       <div class="flex h-12 items-center justify-between min-[1025px]:hidden">
         <router-link to="/" class="flex items-center shrink-0">
-          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-8 w-auto mr-2" />
+          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-5 md:h-8 w-auto mr-2" />
         </router-link>
 
         <button
@@ -92,3 +92,11 @@ onBeforeUnmount(() => {
   </header>
   <Menu :open="isMenuOpen" @close="isMenuOpen = false" />
 </template>
+<style scoped>
+@media(max-width:768px){
+  .logo{
+  width: 55px !important;
+  height: 20px !important;
+}
+}
+</style>

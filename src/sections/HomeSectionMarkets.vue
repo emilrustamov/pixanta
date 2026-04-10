@@ -22,11 +22,11 @@ const getColSpan = (index: number) => {
 </script>
 
 <template>
-    <section class="py-16 lg:py-24">
+    <section class="py-10 lg:py-24">
         <div class="w-full">
 
             <!-- Title -->
-            <div class="mb-12 text-center">
+            <div class="mb-8 md:mb-12 text-center">
                 <h2>
                     Bring Creative Visions To Life
                 </h2>

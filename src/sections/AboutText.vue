@@ -60,7 +60,7 @@ onMounted(() => {
 </script>
 
 <template>
-   <section class="py-12 lg:py-16">
+   <section class="py-10 lg:py-16">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
       
       <!-- Заголовок -->
@@ -109,7 +109,7 @@ onMounted(() => {
     </div>
   </section>
 
-  <section class="pb-12 lg:pb-16">
+  <section class="pb-10 lg:pb-16">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16 text-text font-simple text-[20px]">
 
       <h3 class="font-simple text-[22px] md:text-[24px] text-left mb-8">
@@ -208,7 +208,7 @@ onMounted(() => {
   </section>
 
   <section
-    ref="section" class="relative py-16 md:py-20 bg-cover bg-center" style="background-image: url('/images/about/about-numbers.webp')"
+    ref="section" class="relative py-10 md:py-20 bg-cover bg-center" style="background-image: url('/images/about/about-numbers.webp')"
   >
 
     <div class="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 font-main">
@@ -240,7 +240,7 @@ onMounted(() => {
     </div>
   </section>
 
-  <section class="pt-16 md:pt-20 bg-white bg-[#f5f5f5]">
+  <section class="pt-10 md:pt-16 bg-white bg-[#f5f5f5]">
     <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
 
       <!-- Title -->
@@ -270,7 +270,7 @@ onMounted(() => {
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-white">
+  <section class="py-10 md:py-16 bg-white">
     <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
 
       <!-- Title -->
@@ -286,7 +286,7 @@ onMounted(() => {
       </p>
 
       <!-- Cards -->
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16">
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7 lg:gap-16">
 
         <div
           v-for="(item, index) in items"

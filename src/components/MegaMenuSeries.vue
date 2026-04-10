@@ -16,7 +16,7 @@ const emit = defineEmits<{
     <router-link
       v-for="(item, index) in series"
       :key="item.title"
-      :to="item.href"
+      :to="`/products/${item.slug}`"
       class="flex flex-col items-start gap-2 transition-colors duration-200"
       @mouseenter="emit('change', index)"
     >

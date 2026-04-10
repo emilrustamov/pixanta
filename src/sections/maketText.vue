@@ -11,7 +11,7 @@ import FormSection from '../sections/FormSection.vue'
 </script>
 
 <template>
-  <section class="w-full py-14 md:py-20">
+  <section class="w-full py-10 md:py-16">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16 pb-12 lg:pb-16 border-b border-secondary-grey/20">
       <div class="flex flex-col gap-10 lg:flex-row justify-between">
         

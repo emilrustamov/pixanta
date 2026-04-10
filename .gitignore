@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Ignore video files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

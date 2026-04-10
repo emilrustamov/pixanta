@@ -5,7 +5,7 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <section class="py-12 lg:py-16">
+  <section class="pb-10 lg:pb-16">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
       <button
         type="button"

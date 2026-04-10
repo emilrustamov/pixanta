@@ -30,7 +30,7 @@ const onNextMobile = () => mobileSwiper.value?.slideNext()
 </script>
 
 <template>
-  <section v-if="inspiring.items.length" class="w-full py-14 md:py-20">
+  <section v-if="inspiring.items.length" class="w-full pb-10 md:pb-16">
     <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10 xl:px-16">
       <!-- top -->
       <div class="mx-auto max-w-[1100px] text-center">
