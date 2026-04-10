@@ -697,25 +697,25 @@ export const productPages: Record<string, ProductPage> = {
         title: 'ULTRA-FLEXIBLE CURVATURE',
         description:
           'Supports up to ±45° bending, allowing circular and curved screen configurations for creative installations.',
-        image: '/images/features/1fea-1.png',
+        image: '/images/features/5fea-2.png',
       },
       {
         title: 'INDOOR & OUTDOOR COMPATIBILITY',
         description:
           'One screen solution suitable for both indoor and outdoor environments with stable performance.',
-        image: '/images/features/1fea-2.jpg',
+        image: '/images/inspir/out-1.jpg',
       },
       {
         title: 'SOFT CONNECTION SYSTEM',
         description:
           'Ensures stable and secure signal and power transmission across complex display setups.',
-        image: '/images/features/1fea-3.png',
+        image: '/images/features/5fea-1.png',
       },
       {
         title: 'LIGHTWEIGHT DESIGN',
         description:
           'Only 7kg per cabinet with compact structure for easy installation, transport, and handling.',
-        image: '/images/features/1fea-4.jpg',
+        image: '/images/products/5.png',
       },
     ],
   },
@@ -729,11 +729,11 @@ export const productPages: Record<string, ProductPage> = {
       },
       {
         value: '800–3500',
-        label: 'BRIGHTNESS (CD/sqm)',
+        label: 'BRIGHTNESS',
       },
       {
         value: '500×500×91',
-        label: 'CABINET SIZE (mm)',
+        label: 'CABINET SIZE',
       },
       {
         value: 'IP65/IP65',
@@ -741,7 +741,7 @@ export const productPages: Record<string, ProductPage> = {
       },
       {
         value: '100000',
-        label: 'PRODUCT LIFE (hrs)',
+        label: 'PRODUCT LIFE',
       },
     ],
     groups: [
@@ -804,4 +804,1043 @@ export const productPages: Record<string, ProductPage> = {
   }
 },
 
+'slm-series': {
+  slug: 'slm-series',
+
+  hero: {
+    title: 'SLIM LIGHT MODULAR series',
+    subtitle: 'SLIM LIGHT MODULAR',
+    description:
+      'READY TO USE HIGH QUALITY LED CABINET',
+    mediaType: 'image',
+    media:"/images/products/6.png"
+  },
+
+  about: {
+    title: 'SLIM LIGHT MODULAR series',
+    subtitle: 'SLM Series — High temperature resistance, exceptional strength, lightweight ﬁberglass body  for deformation-free operation. ',
+    paragraphs: [
+      'The SLM Series is a slim and lightweight modular LED display designed for high-performance indoor applications. Featuring an integrated cabinet structure, it comes ready to use, eliminating the need for complex on-site assembly. With pixel pitch options of P1.8, P2.0, and P2.5, the system delivers clear visuals and stable performance for various indoor environments.',
+      'Built with a reinforced fiberglass body, the SLM Series ensures high strength, temperature resistance, and deformation-free operation. Its lightweight design of only 12kg per cabinet and 45.5mm thickness allows for easy installation and handling. The wireless connection system eliminates internal wiring, while flexible docking and L-shaped angle support enable creative and precise installations.',
+      'The cabinet is designed for efficiency and reliability, offering quick installation with increased assembly speed and full frontal maintenance access. With high refresh rate performance, stable structure, and pre-assembled configuration, the SLM Series provides a dependable and convenient solution for modern indoor LED display projects.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/6.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/6-2.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/6-3.jpg',
+        // poster: '/images/products/texture-led-series/video-poster.jpg',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'SLM series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'READY-TO-USE CABINET',
+        description:
+          'Integrated cabinet design comes pre-assembled for fast and easy installation without complex setup.',
+        image: '/images/products/6.png',
+      },
+      {
+        title: 'LIGHTWEIGHT DESIGN',
+        description:
+          'Only 12kg per cabinet with a slim 45.5mm profile for easy handling and installation.',
+        image: '/images/features/6fea-2.png',
+      },
+      {
+        title: 'WIRELESS CONNECTION',
+        description:
+          'No internal wiring inside the cabinet ensures a clean structure and stable signal transmission.',
+        image: '/images/features/6fea-3.png',
+      },
+      {
+        title: 'FLEXIBLE DOCKING & L-SHAPE SUPPORT',
+        description:
+          'Supports standard and small panels with L-shaped angle configurations for creative installations.',
+        image: '/images/one-product/6-2.png',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'SLIM LIGHT MODULAR series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '600',
+        label: 'BRIGHTNESS',
+      },
+      {
+        value: '3840Hz',
+        label: 'REFRESH RATE',
+      },
+      {
+        value: '320×240×46.5',
+        label: 'PANEL DIMENSIONS',
+      },
+      {
+        value: 'IP40',
+        label: 'IP RATING',
+      },
+      {
+        value: '160°/140°',
+        label: 'VIEWING ANGLE',
+      },
+    ],
+    groups: [
+      {
+        title: 'SLM Series',
+        left: [
+          {
+            label: 'PIXEL PITCH',
+            value: '1.86 / 2.0 / 2.5 mm',
+          },
+          {
+            label: 'PANEL RESOLUTION',
+            value: '172×256 / 160×240 / 128×192',
+          },
+          {
+            label: 'PANEL WEIGHT',
+            value: '1.8–1.9 kg',
+          },
+          {
+            label: 'MODULE SIZE',
+            value: '320×240 mm',
+          },
+          {
+            label: 'BRIGHTNESS',
+            value: '600 nit',
+          },
+          {
+            label: 'REFRESH RATE',
+            value: '3840 Hz',
+          },
+        ],
+        right: [
+          {
+            label: 'GRAY SCALE',
+            value: '13/14',
+          },
+          {
+            label: 'VIEWING ANGLE (H/V)',
+            value: '160° / 140°',
+          },
+          {
+            label: 'POWER CONSUMPTION (MAX/AVG)',
+            value: '336/112 W/m² (SLM1.8)',
+          },
+          {
+            label: 'OPERATING TEMPERATURE',
+            value: '-10 ~ 40°C',
+          },
+          {
+            label: 'OPERATING HUMIDITY',
+            value: '10%–85%',
+          },
+          {
+            label: 'CERTIFICATION',
+            value: 'CCC, FCC, ETL, CE',
+          },
+        ],
+      },
+    ],
+  }
+},
+
+'hdc-series': {
+  slug: 'hdc-series',
+
+  hero: {
+    title: 'HIGH DEFINITION COB series',
+    subtitle: 'HIGH DEFINITION COB',
+    description:
+      'Unparalleled Durability and Clarity',
+    mediaType: 'image',
+    media:"/images/products/7.png"
+  },
+
+  about: {
+    title: 'HIGH DEFINITION COB series',
+    subtitle: 'Brings ultimate in durability ,with superior impact, dust,moisture protection, designed for spaces where reliability & engagement are key.',
+    paragraphs: [
+      'The High Definition COB Series is designed for ultra-fine pixel pitch applications where image clarity and visual precision are critical. Utilizing advanced Chip-on-Board (COB) technology, the display delivers seamless visuals with superior contrast, deep blacks, and outstanding color uniformity, making it ideal for close-viewing environments.',
+      'Built with a fully encapsulated LED surface, the COB Series offers enhanced durability and protection against dust, moisture, and physical impact. The robust structure ensures long-term stability, reduced failure rates, and consistent performance even in demanding indoor environments.',
+      'With high refresh rates, precise grayscale control, and energy-efficient operation, the High Definition COB Series provides a reliable solution for premium installations such as control rooms, studios, corporate spaces, and high-end retail environments, where both performance and visual quality are essential.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/7.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/7-2.png',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'BX series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: '16:9 GOLDEN RATIO',
+        description:
+          'Standard 27.5" Size FHD/4K Pixel to Pixel Resolutions.',
+        image: '/images/features/7fea-1.jpg',
+      },
+      {
+        title: 'SUPERIOR PROTECTION',
+        description:
+          'Fully encapsulated COB surface provides strong resistance to impact, dust, and moisture for long-term reliability.',
+        image: '/images/one-product/7-2.png',
+      },
+      {
+        title: 'HIGH DEFINITION VISUALS',
+        description:
+          'Supports DCI-P3 color gamut, HDR, and 22-bit color depth for precise, vivid, and high-contrast image quality.',
+        image: '/images/features/7fea-3.webp',
+      },
+      {
+        title: 'LOW LATENCY & HIGH PERFORMANCE',
+        description:
+          '3840Hz refresh rate with low latency ensures smooth motion and stable performance in demanding applications.',
+        image: '/images/features/7fea-4.png',
+      }
+    ],
+  },
+
+  specifications: {
+    title: 'HIGH DEFINITION COB series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '3840HZ',
+        label: 'REFRESH RATE',
+      },
+      {
+        value: '800nits',
+        label: 'Max.BRIGHTNESS',
+      },
+      {
+        value: ' 15000:1',
+        label: 'Contrast',
+      },
+      {
+        value: 'HDR',
+        label: 'Dynamic range',
+      },
+      {
+        value: '22bit',
+        label: 'Color depth',
+      },
+    ],
+    groups: [
+      {
+        title: 'HDC COB Series',
+        left: [
+          {
+            label: 'DRIVING TYPE',
+            value: '1/48',
+          },
+          {
+            label: 'POWER CONSUMPTION (MAX/AVG)',
+            value: '390/130 W/m²',
+          },
+          {
+            label: 'AC OPERATING VOLTAGE',
+            value: '100–240V',
+          },
+          {
+            label: 'OPERATING TEMPERATURE',
+            value: '-10 ~ 40°C',
+          },
+          {
+            label: 'OPERATING HUMIDITY',
+            value: '10%–80%',
+          },
+          {
+            label: 'IP RATING (FRONT/REAR)',
+            value: 'IP40/IP21',
+          },
+        ],
+        right: [
+          {
+            label: 'STORAGE TEMPERATURE',
+            value: '-40 ~ 60°C',
+          },
+          {
+            label: 'STORAGE HUMIDITY',
+            value: '10%–85%',
+          },
+          {
+            label: 'LED LIFETIME',
+            value: '100000 H',
+          },
+          {
+            label: 'MODULE MAINTENANCE',
+            value: 'Front',
+          },
+          {
+            label: 'PSU & OTHERS MAINTENANCE',
+            value: 'Front',
+          },
+          {
+            label: 'PANEL INSTALLATION TYPE',
+            value: 'Stacking / Wall mounting / Hanging',
+          },
+        ],
+      },
+    ]
+  },
+},
+
+'flm-series': {
+  slug: 'flm-series',
+
+  hero: {
+    title: 'FLEX MODULE series',
+    subtitle: 'FLEX MODULE',
+    description:
+      'Flexible structure for unlimited visual layouts',
+    mediaType: 'image',
+    media:"/images/products/8.png"
+  },
+
+  about: {
+    title: 'FLEX MODULE series',
+    subtitle: 'FLM Series — Seamless flexibility for dynamic installations',
+    paragraphs: [
+      'FLM Series is designed as a highly flexible LED module solution for projects where standard flat displays are not enough. With its adaptable structure, it easily conforms to curved, concave, convex, and custom-shaped surfaces, making it ideal for creative installations, architectural media, and immersive environments.',
+      'Built with a lightweight and modular design, the FLM Series ensures easy handling and efficient installation across a wide range of applications. The flexible modules maintain stable signal transmission and consistent visual performance, allowing seamless integration into complex layouts without compromising image quality.',
+      'Whether used for artistic displays, retail environments, or large-scale visual concepts, the FLM Series provides reliable operation and long-term durability. Its ability to create smooth, continuous surfaces opens new possibilities for designers and engineers, enabling unique and visually striking LED solutions.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/8.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/8-2.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/8-3.jpg',
+        // poster: '/images/products/texture-led-series/video-poster.jpg',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-8.jpg',
+    alt: 'FLM series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'FLEXIBLE STRUCTURE',
+        description:
+          'Soft module design allows bending into curved, cylindrical, and custom shapes for creative installations.',
+        image: '/images/one-product/8-3.jpg',
+      },
+      {
+        title: 'CREATIVE SHAPE SUPPORT',
+        description:
+          'Supports spherical, column, and irregular display forms for immersive and architectural applications.',
+        image: '/images/one-product/8-2.png',
+      },
+      {
+        title: 'LIGHTWEIGHT MODULE DESIGN',
+        description:
+          'Compact and lightweight modules simplify installation on complex surfaces and structures.',
+        image: '/images/features/8fea-3.jpg',
+      },
+      {
+        title: 'SEAMLESS VISUAL INTEGRATION',
+        description:
+          'Flexible modules ensure smooth and continuous display surfaces without visible gaps.',
+        image: '/images/features/8fea-4.jpg',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'FLEX MODULE series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '3840HZ',
+        label: 'REFRESH RATE',
+      },
+      {
+        value: '1000nits',
+        label: 'MAX.BRIGHTNESS',
+      },
+      {
+        value: ' 140°/140° ',
+        label: 'Viewing angle ',
+      },
+      {
+        value: '5000:1',
+        label: ' Contrast ',
+      },
+      {
+        value: '>14bit',
+        label: 'Greyscale',
+      },
+    ],
+    groups: [
+      {
+        title: 'FLM Series',
+        left: [
+          {
+            label: 'SCANNING',
+            value: '1/32',
+          },
+          {
+            label: 'GRAYSCALE',
+            value: '>14bit',
+          },
+          {
+            label: 'BRIGHTNESS',
+            value: '700–900 nit',
+          },
+          {
+            label: 'DRIVING MODE',
+            value: '1/32',
+          },
+          {
+            label: 'REFRESH STRUCTURE',
+            value: 'High refresh scanning',
+          },
+        ],
+        right: [
+          {
+            label: 'AVAILABLE SCANNING OPTIONS',
+            value: '1/64 / 1/48 / 1/32 / 1/43 / 1/40 / 1/24 / 1/26 / 1/20 / 1/16',
+          },
+          {
+            label: 'COLOR DEPTH',
+            value: '>14bit',
+          },
+          {
+            label: 'BRIGHTNESS RANGE',
+            value: '700–900 nit',
+          },
+          {
+            label: 'APPLICATION TYPE',
+            value: 'Flexible LED Module',
+          },
+        ],
+      },
+    ]
+  },
+},
+
+'hdg-series': {
+  slug: 'hdg-series',
+
+  hero: {
+    title: 'HIGH DEFINITION GOB series',
+    subtitle: 'HIGH DEFINITION GOB',
+    description:
+      'GOB Technology Available, Durable & Lasting',
+    mediaType: 'image',
+    media:"/images/products/9.png"
+  },
+
+  about: {
+    title: 'HIGH DEFINITION GOB series',
+    subtitle: 'HDG Series — Higher stability with longer lifespan.',
+    paragraphs: [
+      'HIGH DEFINITION GOB Series is engineered to deliver enhanced durability and stable visual performance through advanced Glue-On-Board protection technology. The display surface is reinforced with a protective transparent layer that safeguards LEDs from dust, moisture, and physical impact, making it ideal for high-traffic and demanding indoor environments.',
+      'Designed for consistent image quality, the GOB technology improves reliability while maintaining excellent brightness and uniform color output. The protected surface reduces the risk of pixel damage and ensures long-term stability, even in installations where frequent contact or exposure is expected.',
+      'With its combination of protection and high-definition clarity, the HIGH DEFINITION GOB Series is well-suited for retail, control rooms, exhibition spaces, and public areas. It offers a balance between visual performance and structural resilience, providing a dependable solution for professional LED display applications.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/9.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/9-3.jpg',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/9-2.jpg',
+        // poster: '/images/products/texture-led-series/video-poster.jpg',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'HDG series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'GOB SURFACE PROTECTION',
+        description:
+          'Advanced GOB technology provides strong resistance to impact, dust, and moisture for long-term durability.',
+        image: '/images/features/9fea-1.png',
+      },
+      {
+        title: 'ANTI-COLLISION & WATERPROOF',
+        description:
+          'Protected surface prevents damage from physical contact while ensuring waterproof and dustproof performance.',
+        image: '/images/features/9fea-2.png',
+      },
+      {
+        title: 'FRONT ACCESS MAINTENANCE',
+        description:
+          'Module, power supply, and receiving card can be serviced from the front without additional maintenance space.',
+        image: '/images/one-product/9-2.jpg',
+      },
+      {
+        title: 'CABLE-LESS DESIGN',
+        description:
+          'Integrated cable-free structure improves installation efficiency and reduces failure risks.',
+        image: '/images/features/9fea-4.png',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'HIGH DEFINITION GOB series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '3840HZ',
+        label: 'REFRESH RATE',
+      },
+      {
+        value: '600-1000nits',
+        label: 'MAX.BRIGHTNESS',
+      },
+      {
+        value: ' DCI-P3 ',
+        label: 'Colar gamut',
+      },
+      {
+        value: '5000:1',
+        label: 'Contrast',
+      },
+      {
+        value: 'HDR',
+        label: 'Dynamic range ',
+      },
+    ],
+    groups: [
+      {
+        title: 'HIGH DEFINITION GOB Series',
+        left: [
+          {
+            label: 'PIXEL PITCH',
+            value: '1.25 mm',
+          },
+          {
+            label: 'MODULE SIZE (W×H×D)',
+            value: '320×160×2 mm',
+          },
+          {
+            label: 'MODULE RESOLUTION',
+            value: '256×128',
+          },
+          {
+            label: 'CABINET SIZE (W×H×D)',
+            value: '640×480×46 mm',
+          },
+          {
+            label: 'CABINET MATERIAL',
+            value: 'Die Casting Aluminum',
+          },
+          {
+            label: 'SCANNING MODE',
+            value: '1/64',
+          },
+        ],
+        right: [
+          {
+            label: 'GRAY SCALE',
+            value: '14–16 bit',
+          },
+          {
+            label: 'PROTECTION LEVEL (F/R)',
+            value: 'IP20/IP45',
+          },
+          {
+            label: 'BRIGHTNESS',
+            value: '600–1000 cd/㎡',
+          },
+          {
+            label: 'COLOR TEMPERATURE',
+            value: '3200–9300K Adjustable',
+          },
+          {
+            label: 'CONTRAST RATIO',
+            value: '≤5000:1',
+          },
+          {
+            label: 'REFRESH RATE',
+            value: '≥3840Hz',
+          },
+        ],
+      },
+    ]
+  },
+},
+
+'ltd-series': {
+  slug: 'ltd-series',
+
+  hero: {
+    title: 'LOUVER TRANSPARENT DISPLAY series',
+    subtitle: 'LOUVER TRANSPARENT DISPLAY',
+    description:
+      'PIXANTA TRANSPARENT LED SCREEN',
+    mediaType: 'image',
+    media:"/images/products/10.png"
+  },
+
+  about: {
+    title: 'LOUVER TRANSPARENT DISPLAY series',
+    subtitle: 'Product with high coast-eﬀectiveness, designed for varieties of digital glass curtain wall solution requirements.',
+    paragraphs: [
+      'LTD Series (Louver Transparent Display) is designed to deliver high-impact visuals while maintaining transparency and airflow. The louver structure allows light and air to pass through the display, making it ideal for large-scale installations on building facades, glass surfaces, and outdoor media where visibility and ventilation are essential.',
+      'Engineered for architectural integration, the LTD Series combines lightweight construction with a modular design for easy installation and scalability. Its transparent format reduces wind load and structural requirements, while still providing bright, clear content that remains visible in various lighting conditions.',
+      'With its balance of visibility, performance, and structural efficiency, the LTD Series is well-suited for retail storefronts, media facades, and public spaces. It enables dynamic digital communication without blocking natural light or the surrounding environment, making it a practical and visually striking display solution.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/10.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/10-2.jpg',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/10-3.jpg',
+        // poster: '/images/products/texture-led-series/video-poster.jpg',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'LTD series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'HIGH TRANSPARENCY DESIGN',
+        description:
+          'Louver structure allows light and visibility through the display while maintaining clear visual content.',
+        image: '/images/features/10fea-1.jpg',
+      },
+      {
+        title: 'CUSTOMIZABLE SHAPES',
+        description:
+          'Supports rectangular, parallelogram, circular, and triangular configurations for flexible architectural designs.',
+        image: '/images/features/10fea-2.png',
+      },
+      {
+        title: 'MODULAR & CUSTOM SIZES',
+        description:
+          'Cabinet width and height can be customized to fit different installation requirements and structures.',
+        image: '/images/features/10fea-3.png',
+      },
+      {
+        title: 'EASY INSTALLATION',
+        description:
+          'Integrated cabinet design with modular structure enables fast and efficient installation.',
+        image: '/images/features/10fea-4.jpg',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'LOUVER TRANSPARENT DISPLAY series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '3000–7500 nits',
+        label: 'BRIGHTNESS',
+      },
+      {
+        value: '74%–80%',
+        label: 'TRANSPARENCY',
+      },
+      {
+        value: 'P3.9 / P8 / P10 / P16',
+        label: 'PIXEL PITCH',
+      },
+      {
+        value: '1000×1000 mm',
+        label: 'CABINET SIZE',
+      },
+      {
+        value: 'SMD2727',
+        label: 'LED TYPE',
+      },
+    ],
+    groups: [
+      {
+        title: 'LTD Series',
+        left: [
+          {
+            label: 'PIXEL DISTANCE',
+            value: 'P3.9 / P8 / P10 / P16',
+          },
+          {
+            label: 'LED TYPE',
+            value: 'SMD1921 / SMD2727',
+          },
+          {
+            label: 'CABINET SIZE (W×H)',
+            value: '1000×500 / 1000×1000 mm',
+          },
+        ],
+        right: [
+          {
+            label: 'BRIGHTNESS',
+            value: '3000–7500 nits',
+          },
+          {
+            label: 'TRANSPARENCY',
+            value: '74%–80%',
+          },
+        ],
+      },
+    ],
+  }
+},
+
+'lfd-series': {
+  slug: 'lfd-series',
+
+  hero: {
+    title: 'LED FLOOR DISPLAY series',
+    subtitle: 'LED FLOOR DISPLAY',
+    description:
+      'SUPER LOAD-BEARING PERFORMANCE',
+    mediaType: 'image',
+    media:"/images/products/11.png"
+  },
+
+  about: {
+    title: 'LED FLOOR DISPLAY series',
+    subtitle: 'Featured with the reinforcement for whole back to distribute the force on the surface, working with galvanized ﬂoor support,',
+    paragraphs: [
+      'LED Floor Display is designed to transform surfaces into dynamic, interactive visual platforms. Built to withstand foot traffic and physical impact, it delivers stable performance while maintaining high brightness and vivid image quality, making it ideal for public spaces, events, and immersive environments.',
+      'Engineered with a durable structure and protective surface, the display ensures resistance to pressure, wear, and daily usage. Its modular design allows flexible installation across different floor layouts, enabling seamless integration into stages, retail environments, showrooms, and entertainment venues.',
+      'With strong visual performance and reliable operation, LED Floor Display enhances user engagement by turning ordinary floors into eye-catching digital experiences. It provides a balance between durability and visual impact, offering a practical solution for projects that require both performance and interaction.',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/11.png',
+      },
+      {
+        type: 'image',
+        src: '/images/features/11fea-1.jpg',
+      },
+
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'LFD series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'SUPER LOAD-BEARING PERFORMANCE',
+        description:
+          'Reinforced back structure distributes surface force, supporting loads over 3T/sqm for walking and jumping crowds.',
+        image: '/images/features/11fea-1.jpg',
+      },
+      {
+        title: 'ANTI-SLIP & WATERPROOF SURFACE',
+        description:
+          'Anti-slip waterproof groove design ensures safety and stability in high-traffic environments.',
+        image: '/images/features/11fea-2.png',
+      },
+      {
+        title: 'QUICK INSTALLATION SYSTEM',
+        description:
+          'Independent cabinet foot design allows fast positioning and quick assembly on-site.',
+        image: '/images/features/11fea-3.png',
+      },
+      {
+        title: 'HIGH BRIGHTNESS & VISUAL PERFORMANCE',
+        description:
+          'Up to 1000 nits brightness with 3840Hz refresh rate and 160° viewing angle for clear visuals.',
+        image: '/images/features/11fea-4.png',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'LED FLOOR DISPLAY series SPECIFICATIONS',
+    metrics: [
+      {
+        value: '3840HZ',
+        label: 'REFRESH RATE',
+      },
+      {
+        value: '1000nits',
+        label: 'MAX.BRIGHTNESS',
+      },
+      {
+        value: ' 160°/160° ',
+        label: 'Viewing angle ',
+      },
+      {
+        value: '5000:1',
+        label: ' Contrast ',
+      },
+      {
+        value: 'IP54',
+        label: 'Protection',
+      },
+    ],
+    groups: [
+      {
+        title: 'LED Floor Display',
+        left: [
+          {
+            label: 'AVERAGE POWER CONSUMPTION',
+            value: '280 W/m²',
+          },
+          {
+            label: 'VIEWING ANGLE',
+            value: '160°/160°',
+          },
+          {
+            label: 'DRIVING MODE',
+            value: '1/32',
+          },
+          {
+            label: 'REFRESH RATE',
+            value: '3840Hz',
+          },
+        ],
+        right: [
+          {
+            label: 'MAX LOADING BEARING',
+            value: '3 tons/m²',
+          },
+          {
+            label: 'WORK TEMPERATURE',
+            value: '-20°C ~ +55°C',
+          },
+          {
+            label: 'STORAGE TEMPERATURE',
+            value: '-30°C ~ +60°C',
+          },
+          {
+            label: 'PROTECTION LEVEL',
+            value: 'Front IP54 / Back IP43',
+          },
+        ],
+      },
+    ]
+  },
+},
+
+'gld-series': {
+  slug: 'gld-series',
+
+  hero: {
+    title: 'GLASS LED DISPLAY series',
+    subtitle: 'GLASS LED DISPLAY',
+    description:
+      'Pixanta Glass LED use high density industrial tempered glass',
+    mediaType: 'image',
+    media:"/images/products/12.png"
+  },
+
+  about: {
+    title: 'GLASS LED DISPLAY series',
+    subtitle: 'GLD Series — with Highly customizable options',
+    paragraphs: [
+      'Pixanta Glass LED uses high-density industrial tempered glass as the base material combined with patented integrated-IC technology and Nano film circuits; it can be installed indoors directly behind building windows, facades, and store fronts, or used as a construction component.',
+      'Pixanta Glass LED will transform any glass surface into a high resolution, high transparency and high eﬃciency display!',
+      'Highly customizable: large modular Pixanta Glass LED panels maintain facade integrity. Size per panel: short side <1800 mm, long side = 4500 mm. Area per panel: standard panel <3.6 m², custom panel <8 m².',
+    ],
+  },
+
+  media: {
+    slides: [
+      {
+        type: 'image',
+        src: '/images/products/12.png',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/12-2.jpg',
+      },
+      {
+        type: 'image',
+        src: '/images/one-product/12-3.jpg',
+        // poster: '/images/products/texture-led-series/video-poster.jpg',
+      },
+    ],
+  },
+
+  showcase: {
+    image: '/images/product-banners/ab-1.jpg',
+    alt: 'GLD series',
+  },
+
+  features: {
+    title: 'KEY FEATURES',
+    items: [
+      {
+        title: 'HIGH TRANSPARENCY GLASS STRUCTURE',
+        description:
+          'Uses ultra-clear tempered glass with integrated LED layer, maintaining high transparency for façade applications.',
+        image: '/images/products/12.png',
+      },
+      {
+        title: 'INTEGRATED IC & NANO FILM TECHNOLOGY',
+        description:
+          'Patented integrated-IC design combined with nano film circuits ensures stable performance and high resolution output.',
+        image: '/images/features/12fea-2.png',
+      },
+      {
+        title: 'FLEXIBLE INSTALLATION OPTIONS',
+        description:
+          'Supports behind-glass installation and alternative glass mounting for storefronts and building facades.',
+        image: '/images/features/12fea-3.png',
+      },
+      {
+        title: 'CUSTOM SHAPES & PANEL SIZES',
+        description:
+          'Allows special-shaped customization with various panel sizes while maintaining façade integrity.',
+        image: '/images/features/12fea-4.png',
+      },
+    ],
+  },
+
+  specifications: {
+    title: 'GLASS LED DISPLAY SPECIFICATIONS',
+    metrics: [
+      {
+        value: '400–6000 nits',
+        label: 'BRIGHTNESS',
+      },
+      {
+        value: '86%–99%',
+        label: 'TRANSPARENCY',
+      },
+      {
+        value: '45–65 kg/m²',
+        label: 'WEIGHT',
+      },
+      {
+        value: '1800×4500',
+        label: 'PANEL SIZE',
+      },
+      {
+        value: 'P6–P60',
+        label: 'PIXEL PITCH',
+      },
+    ],
+    groups: [
+      {
+        title: 'Installation',
+        left: [
+          {
+            label: 'INSTALLATION WAY',
+            value: 'Behind glass',
+          },
+          {
+            label: 'BASIC STRUCTURE',
+            value: 'Laminated',
+          },
+          {
+            label: 'SIZE',
+            value: 'Customized',
+          },
+          {
+            label: 'APPLICATION',
+            value: 'Indoor / Semi-outdoor',
+          },
+          {
+            label: 'MAINTENANCE',
+            value: 'Exchange facade / accessory',
+          },
+        ],
+        right: [
+          {
+            label: 'INSTALLATION WAY',
+            value: 'Alternative glass installation',
+          },
+          {
+            label: 'BASIC STRUCTURE',
+            value: 'Laminated / IGU',
+          },
+          {
+            label: 'SIZE',
+            value: 'Customized',
+          },
+          {
+            label: 'APPLICATION',
+            value: 'Indoor / Outdoor',
+          },
+          {
+            label: 'MAINTENANCE',
+            value: 'Exchange facade / accessory',
+          },
+        ],
+      },
+    ],
+  },
+},
 }

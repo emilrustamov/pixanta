@@ -60,7 +60,7 @@ const nextSlide = () => {
                     </div>
 
                     <div class="mt-10">
-                        <a href="#contact"
+                        <a href="/contact"
                             class="inline-flex min-h-[50px] items-center justify-center rounded-full bg-primary px-8 font-main text-[18px] uppercase text-white transition hover:opacity-90">
                             Get A Quote
                         </a>
@@ -73,7 +73,7 @@ const nextSlide = () => {
                         <div class="relative h-[300px] md:h-[520px] overflow-hidden flex items-center justify-center">
                             <!-- image -->
                             <img v-if="currentSlide?.type === 'image'" :src="currentSlide.src" alt=""  loading="lazy"  decoding="async"
-                                class="max-h-full max-w-full object-contain"/>
+                                class="max-h-full max-w-full object-contain rounded-[12px]"/>
 
                             <!-- video poster -->
                             <div v-else class="relative">

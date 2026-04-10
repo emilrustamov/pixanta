@@ -20,7 +20,15 @@ const emit = defineEmits<{
       class="flex flex-col items-start gap-2 transition-colors duration-200"
       @mouseenter="emit('change', index)"
     >
-      <div class="h-[28px] w-[42px] rounded-[6px] border border-black/15 bg-black/5"></div>
+      <div class="h-[38px] w-[58px] rounded-[8px] border border-black/15 bg-black/5 flex items-center justify-center">
+        <img
+          v-if="item.logo"
+          :src="item.logo"
+          :alt="`${item.title} logo`"
+          class="max-h-[34px] max-w-[50px] object-contain"
+          loading="lazy"
+        />
+      </div>
 
       <span
         class="font-roboto text-[18px] leading-[1.25]"

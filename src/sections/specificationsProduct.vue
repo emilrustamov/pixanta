@@ -58,7 +58,8 @@ defineProps<{
                 <div class="mt-14 space-y-10">
                     <div v-for="(group, i) in specifications.groups" :key="i" class="">
                         <!-- header -->
-                        <div class="border-b border-[#d9d9d9] pb-6 flex cursor-pointer items-center justify-between" @click="toggle(i)">
+                        <div class="border-b border-[#d9d9d9] pb-6 flex cursor-pointer items-center justify-between"
+                            @click="toggle(i)">
                             <h3 class="font-main text-primary font-medium text-[24px]">
                                 {{ group.title }}
                             </h3>
@@ -66,9 +67,11 @@ defineProps<{
                             <!-- arrow -->
                             <span class="text-primary text-[20px] transition-transform duration-300"
                                 :class="openIndex === i ? 'rotate-180' : ''">
-                            <svg width="36" height="36" viewBox="0 0 247 270" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block align-middle">
-                                <path d="M185.25 168.75L123.5 101.25L61.75 168.75" stroke="#FF6600" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                                <svg width="36" height="36" viewBox="0 0 247 270" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="inline-block align-middle">
+                                    <path d="M185.25 168.75L123.5 101.25L61.75 168.75" stroke="#FF6600"
+                                        stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
                             </span>
                         </div>
 
@@ -108,17 +111,20 @@ defineProps<{
 
                                 <!-- note -->
                                 <p class="font-main mt-6 text-[16px] leading-[1.6] text-location-grey">
-                                    1) Brightness (NITs) is an adjustable specification depending on the application and how users opt to drive diodes. Brightness levels should be properly managed as power consumption and LED lifetime can also be affected.
+                                    1) Brightness (NITs) is an adjustable specification depending on the application and
+                                    how users opt to drive diodes. Brightness levels should be properly managed as power
+                                    consumption and LED lifetime can also be affected.
                                 </p>
                             </div>
                         </transition>
 
                         <!-- кнопка ВСЕГДА видна -->
                         <div class="mt-6 flex justify-center">
-                            <a href="#"
-                                class="inline-flex min-h-[52px] items-center justify-center bg-primary px-8 font-main font-medium text-[18px] uppercase text-white">
+                            <button @click="toggle(i)"
+                                class="inline-flex min-h-[52px] items-center justify-center bg-primary px-8 font-main font-medium text-[18px] uppercase text-white"
+                                type="button">
                                 ACCESS PRODUCT SPEC SHEET
-                            </a>
+                            </button>
                         </div>
 
                         <!-- divider -->

@@ -2,6 +2,7 @@ export type MenuSeriesItem = {
     title: string
     slug: string
     image: string
+    logo: string
     description: string
     specs?: string[]
   }
@@ -37,6 +38,7 @@ export type MenuSeriesItem = {
             {
               title: 'BX Series',
               slug: 'bx-series',
+              logo: '/images/mini-logo/l1.png',
               image: '/images/products/bx-1.png',
               description: 'With modular front access, maintenance becomes faster and easier — no need for rear space or complex tools. The display adopts a standard 1000×1000mm cabinet, available in pure black or pure white, ensuring a clean and modern look for any installation.',
               specs: ['P3.9', 'P4.8', 'P6.25', 'P10.4'],
@@ -44,6 +46,7 @@ export type MenuSeriesItem = {
             {
               title: 'SPL Series',
               slug: 'spl-series',
+              logo: '/images/mini-logo/l2.png',
               image: '/images/products/2.png',
               description: 'Stadium perimeter LED display designed for sports environments and player protection.',
               specs: ['P6', 'P10'],
@@ -51,6 +54,7 @@ export type MenuSeriesItem = {
             {
               title: 'MFM Series',
               slug: 'mfm-series',
+              logo: '/images/mini-logo/l3.png',
               image: '/images/products/3.png',
               description: 'Media facade mesh with high transparency and flexible configuration for large-scale facade visuals.',
               specs: ['P15.625', 'P31.25', 'P42', 'P50', 'P62.5', 'P88', 'P100'],
@@ -65,6 +69,7 @@ export type MenuSeriesItem = {
             {
               title: 'RTX Series',
               slug: 'rtx-series',
+              logo: '/images/mini-logo/l4.png',
               image: '/images/products/4.png',
               description: 'Versatile indoor and outdoor rental LED display with front and rear maintenance.',
               specs: ['P2.6', 'P2.97', 'P3.91'],
@@ -72,6 +77,7 @@ export type MenuSeriesItem = {
             {
               title: 'FTX Series',
               slug: 'ftx-series',
+              logo: '/images/mini-logo/l5.png',
               image: '/images/products/5.png',
               description: 'Flexible rental LED display for curved, circular and custom stage configurations.',
               specs: ['P2.6', 'P2.97', 'P3.91'],
@@ -86,6 +92,7 @@ export type MenuSeriesItem = {
             {
               title: 'SLM Series',
               slug: 'slm-series',
+              logo: '/images/mini-logo/l6.png',
               image: '/images/products/6.png',
               description: 'Slim light modular cabinet with quick installation and frontal maintenance.',
               specs: ['P1.8', 'P2.0', 'P2.5'],
@@ -93,6 +100,7 @@ export type MenuSeriesItem = {
             {
               title: 'HDC Series',
               slug: 'hdc-series',
+              logo: '/images/mini-logo/l7.png',
               image: '/images/products/7.png',
               description: 'High definition COB LED display with integrated cabinet design and strong visual performance.',
               specs: ['P0.7', 'P0.9', 'P1.2', 'P1.5'],
@@ -100,6 +108,7 @@ export type MenuSeriesItem = {
             {
               title: 'FLM Series',
               slug: 'flm-series',
+              logo: '/images/mini-logo/l8.png',
               image: '/images/products/8.png',
               description: 'Flexible LED module for curved surfaces, creative forms and custom installations.',
               specs: ['P0.9', 'P1.2', 'P1.56', 'P1.8', 'P2', 'P2.5', 'P3', 'P4'],
@@ -107,6 +116,7 @@ export type MenuSeriesItem = {
             {
               title: 'HDG Series',
               slug: 'hdg-series',
+              logo: '/images/mini-logo/l9.png',
               image: '/images/products/9.png',
               description: 'High definition GOB LED display with durable protective surface and frontal service.',
               specs: ['P1.2', 'P1.5', 'P1.8', 'P2', 'P2.5'],
@@ -114,6 +124,7 @@ export type MenuSeriesItem = {
             {
               title: 'LTD Series',
               slug: 'ltd-series',
+              logo: '/images/mini-logo/l10.png',
               image: '/images/products/10.png',
               description: 'Louver transparent LED display for glass curtain walls and transparent media surfaces.',
               specs: ['P3.9', 'P8', 'P10', 'P16'],
@@ -128,6 +139,7 @@ export type MenuSeriesItem = {
             {
               title: 'LFD Series',
               slug: 'lfd-series',
+              logo: '/images/mini-logo/l11.png',
               image: '/images/products/11.png',
               description: 'LED floor display with high load-bearing performance for stage, museum and venue use.',
               specs: ['P2.5', 'P2.6', 'P2.9', 'P3.9'],
@@ -142,6 +154,7 @@ export type MenuSeriesItem = {
             {
               title: 'GLD Series',
               slug: 'gld-series',
+              logo: '/images/mini-logo/l12.png',
               image: '/images/products/12.png',
               description: 'Glass LED display solution for storefronts, facades and transparent building installations.',
               specs: ['P6', 'P8', 'P10', 'P16', 'P20', 'P25', 'P30', 'P40', 'P50', 'P60'],
