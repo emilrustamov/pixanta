@@ -42,7 +42,7 @@ export const productPages: Record<string, ProductPage> = {
     },
 
     showcase: {
-      image: '/images/product-banners/ab-1.jpg',
+      image: '/images/slides/banner-BX.jpg',
       alt: 'BX series',
     },
 
@@ -201,7 +201,7 @@ export const productPages: Record<string, ProductPage> = {
     },
 
     showcase: {
-      image: '/images/product-banners/ab-2.jpg',
+      image: '/images/slides/banner-SPL.jpg',
       alt: 'spl series',
     },
 
@@ -355,7 +355,7 @@ export const productPages: Record<string, ProductPage> = {
     },
 
     showcase: {
-      image: '/images/product-banners/ab-3.jpg',
+      image: '/images/slides/banner-MFM.jpg',
       alt: 'mfm series',
     },
 
@@ -514,8 +514,8 @@ export const productPages: Record<string, ProductPage> = {
     },
 
     showcase: {
-      image: '/images/product-banners/ab-4.jpg',
-      alt: 'BX series',
+      image: '/images/slides/banner-RTX.jpg',
+      alt: 'RTX series',
     },
 
     features: {
@@ -686,7 +686,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-5.jpg',
+    image: '/images/slides/banner-FTX.jpg',
     alt: 'FTXseries',
   },
 
@@ -845,7 +845,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-slm.jpg',
     alt: 'SLM series',
   },
 
@@ -999,7 +999,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-HDC.jpg',
     alt: 'BX series',
   },
 
@@ -1158,7 +1158,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-8.jpg',
+    image: '/images/slides/banner-FLM.jpg',
     alt: 'FLM series',
   },
 
@@ -1305,7 +1305,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-HDG.jpg',
     alt: 'HDG series',
   },
 
@@ -1464,7 +1464,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-LTD.jpg',
     alt: 'LTD series',
   },
 
@@ -1591,7 +1591,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-LFD.jpg',
     alt: 'LFD series',
   },
 
@@ -1734,7 +1734,7 @@ export const productPages: Record<string, ProductPage> = {
   },
 
   showcase: {
-    image: '/images/product-banners/ab-1.jpg',
+    image: '/images/slides/banner-GLD.jpg',
     alt: 'GLD series',
   },
 
