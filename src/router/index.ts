@@ -9,6 +9,7 @@ import { marketPages } from '../data/maketsPage'
 import Products from '../pages/Products.vue'
 import PrivacyPolicy from '../pages/PrivacyPolicy.vue'
 import OneProduct from '../pages/OneProduct.vue'
+import NotFound from '../pages/notFound.vue'
 
 const routes = [
   { path: '/', component: Home, meta: { title: 'Home' } },
@@ -20,8 +21,8 @@ const routes = [
   { path: '/markets', name: 'markets', component: Markets},
   { path: '/products', name: 'products', component: Products, meta: { forceTopOnHash: true } },
   { path: '/products/:slug', name: 'product', component: OneProduct },
-  // ❗ fallback
-  { path: '/:pathMatch(.*)*', redirect: '/' },
+  // ❗ 404 Error Page
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound, meta: { title: '404 Not Found' } },
 ]
 
 // const router = createRouter({
@@ -73,4 +74,3 @@ router.afterEach((to) => {
 })
 
 export default router
-

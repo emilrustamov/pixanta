@@ -12,7 +12,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 ">
     <router-link
   v-for="(category, index) in categories"
   :key="category.title"

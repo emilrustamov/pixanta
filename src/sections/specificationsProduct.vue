@@ -26,7 +26,7 @@ defineProps<{
     <section id="specifications" class="w-full pt-14 md:pt-20">
         <!-- header -->
         <div class="relative bg-[#4c4c4c] py-6 text-center">
-            <h2 class="!text-white !text-[24px]">
+            <h2 class="!text-white !text-[24px] px-4 sm:px-6 lg:px-10 xl:px-16">
                 {{ specifications.title }}
             </h2>
 

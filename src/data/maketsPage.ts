@@ -72,7 +72,7 @@ export const marketPages: Record<string, MarketPage> = {
       title: 'RENTAL SOLUTIONS',
       subtitle:'Reliable LED solutions for rental and events.',
       mediaType: 'video',
-      media: '/video/video-3.mp4',
+      media: '/video/rental.mp4',
     },
     intro: {
       title: 'RENTAL',
@@ -187,7 +187,7 @@ export const marketPages: Record<string, MarketPage> = {
       title: 'FLOOR SOLUTIONS',
       subtitle:'LED floors for interaction.',
       mediaType: 'video',
-      media: '/video/video-1.mp4',
+      media: '/video/floor.mp4',
     },
     intro: {
       title: 'FLOOR',
@@ -234,7 +234,7 @@ export const marketPages: Record<string, MarketPage> = {
       title: 'TRANSPARENT SOLUTIONS',
       subtitle:'Clear visuals without blocking light.',
       mediaType: 'video',
-      media: '/video/video-5.mp4',
+      media: '/video/glass.mp4',
     },
     intro: {
       title: 'GLASS',

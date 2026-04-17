@@ -159,7 +159,7 @@ onMounted(() => {
            border-l-[28px] border-r-[28px] border-t-[28px]
            md:border-l-[42px] md:border-r-[28px] md:border-t-[28px]
            border-l-transparent border-r-transparent border-t-white z-3"></div>
-            <div class="mx-auto max-w-[1100px] text-center mt-12">
+            <div class="mx-auto max-w-[1100px] text-center mt-12 px-4 sm:px-6 lg:px-10 xl:px-16">
                 <h2>
           
                     {{ activeCategoryData.title }}

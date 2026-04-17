@@ -26,7 +26,7 @@ const getColSpan = (index: number) => {
         <div class="w-full">
 
             <!-- Title -->
-            <div class="mb-8 md:mb-12 text-center">
+            <div class="mb-8 md:mb-12 text-center px-4 sm:px-6 lg:px-10 xl:px-16">
                 <h2>
                     Bring Creative Visions To Life
                 </h2>

@@ -221,7 +221,7 @@ async function handleSubmit() {
             <textarea
               v-model="form.message"
               placeholder="*Message"
-              class="min-h-[185px] w-full rounded-[10px] border border-[#d3d3d3] bg-white p-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
+              class="min-h-[185px]  max-h-[300px] w-full rounded-[10px] border border-[#d3d3d3] bg-white p-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
               :class="{ '!border-red-500': touched.message && errors.message }"
               @blur="handleBlur('message')"
               @input="validateField('message')"

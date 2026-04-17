@@ -17,7 +17,7 @@ const product = computed(() => productPages[props.slug])
       v-if="product?.showcase?.image"
       :src="product.showcase.image"
       :alt="product.showcase.alt || product.hero.title"
-      class="w-full h-[400px] object-cover block"
+      class="w-full h-full object-cover block"
       loading="lazy"
     />
   </section>
@@ -30,9 +30,10 @@ const product = computed(() => productPages[props.slug])
   display: block;
   object-fit: cover;
 }
-@media(max-width:760px){
+/* @media(max-width:760px){
   .one-image-section img {
-  height: 200px;
-}
-}
+ 
+
+} */
+
 </style>

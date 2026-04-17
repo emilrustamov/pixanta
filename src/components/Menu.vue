@@ -110,7 +110,7 @@ const handleSelect = () => {
   <Transition name="mega-menu">
     <div
       v-if="open"
-      class="fixed inset-0 z-[70] bg-white/75 backdrop-blur-md"
+      class="fixed inset-0 z-[70] bg-white/90 md:bg-white/75 backdrop-blur-md"
       @click.self="emit('close')"
     >
       <div
@@ -130,6 +130,7 @@ const handleSelect = () => {
         <!-- Добавляем обработчик клика @click="handleSelect" 
              на компоненты, где есть финальные ссылки -->
         <MegaMenuCategories
+         
           :categories="activeMainItem.categories"
           :active-index="activeCategoryIndex"
           @change="activeCategoryIndex = $event"
@@ -137,6 +138,7 @@ const handleSelect = () => {
         />
 
         <MegaMenuSeries
+        
           v-if="activeMainItem.type === 'products'"
           :series="activeCategory?.series || []"
           :active-index="activeSeriesIndex"
@@ -145,6 +147,7 @@ const handleSelect = () => {
         />
 
         <MegaMenuPreview
+        
           :title="previewTitle"
           :image="previewImage"
           :description="previewDescription"
@@ -167,5 +170,7 @@ const handleSelect = () => {
 .mega-menu-leave-to {
   opacity: 0;
   transform: scale(0.98); /* Легкое уменьшение */
+
+  
 }
 </style>
