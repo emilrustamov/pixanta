@@ -58,15 +58,14 @@ const socials = [
                     </router-link>
 
                     <div class="space-y-2 font-simple text-[14px] leading-7 text-white/85 xl:space-y-3 xl:text-[16px] xl:leading-8">
-                        <p>Phone: +86-371-88887233</p>
-                        <p>Email: pixanta-led-displays.com</p>
-                        <p>WhatsApp: +86 13418683708</p>
+                        
+                        <p>Email: info@pixantaled.com</p>
+                       
 
                         <div class="">
                             <p>Visit Us:</p>
-                            <p>* Zhengzhou Office: Rm. D1, 1/F, No. 2 Energy and Environment Bldg., No. 11, Changchun
-                                Rd., High and New Tech Zone, Zhengzhou, China</p>
-                            <p>* Shenzhen Office: Xin Qiao Street, Bao'an District, Shenzhen, China</p>
+                            <p>* Building С, Fuzhen lndustrial Park, Changfeng Road, Changzhen Village, Yutang street, Shenzhen, China</p>
+                            
                         </div>
                     </div>
 

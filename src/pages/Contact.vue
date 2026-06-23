@@ -34,16 +34,16 @@ import FormSection from '../sections/FormSection.vue';
 
           <div class="mt-4 space-y-4 text-[16px] leading-relaxed text-location-grey font-simple font-light">
             <div class="flex flex-col gap-2 md:flex-row md:gap-10">
-              <p class="font-simple">Phone: +86-371-88887233</p>
-              <p class="font-simple">Email: sales@canbest-led.com</p>
+              
+              <p class="font-simple">Email: info@pixantaled.com</p>
             </div>
 
-            <p class="font-simple">Whatsapp: +86 13418683708</p>
+            
 
             <div class="font-simple">
               <p class="mb-2">Visit Us:</p>
-              <p >* Zhengzhou Office: Rm. D1, 1/F, No. 2 Energy and Environment Bldg., No. 11, Changchun Rd., High and New Tech Zone, Zhengzhou, China</p>
-              <p>* Shenzhen Office: Xin Qiao Street, Bao'an District, Shenzhen, China</p>
+              <p >* Building С, Fuzhen lndustrial Park, Changfeng Road, Changzhen Village, Yutang street, Shenzhen, China</p>
+             
             </div>
           </div>
         </div>

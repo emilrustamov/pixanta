@@ -4,10 +4,8 @@ import PageLocation from '../components/PageLocation.vue'
 
 <template>
   <section class="relative">
-    <div
-      class="banner relative w-full bg-cover bg-center"
-      :style="{ backgroundImage: 'url(/images/contact/contact-banner.webp)' }"
-    >
+   <div class="banner relative w-full  bg-cover bg-center"
+    :style="{ backgroundImage: 'url(/images/new.jpg)' }">
       <div class="absolute inset-0 flex items-center justify-center text-white"></div>
     </div>
   </section>
