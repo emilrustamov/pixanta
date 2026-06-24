@@ -141,7 +141,7 @@ const socials = [
                     Copyright Notice © Pixanta Opto-Electrical Science & Technology Co., Ltd All Right Reserved and by
                     Legal Protection
                 </p>
-                <p class="mt-3 font-simple text-[14px] leading-6 text-white/55">
+                <p class="mt-3 font-simple text-[14px] leading-6 text-white/55 sr-only">
                     powered by
                     <a
                         href="https://ltm.studio"
