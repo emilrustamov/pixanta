@@ -48,7 +48,7 @@ onBeforeUnmount(() => {
     <div class="mx-auto w-full px-4 sm:px-6 min-[1025px]:px-10 xl:px-20">
       <div class="flex h-12 items-center justify-between min-[1025px]:hidden">
         <router-link to="/" class="flex items-center shrink-0">
-          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-5 md:h-8 w-auto mr-2" />
+          <img src="/images/header-logo.png" alt="Pixanta Logo" class="h-5 md:h-8 w-auto mr-2" />
         </router-link>
 
         <button
@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
 
       <div class="hidden h-[92px] items-center justify-between min-[1025px]:flex">
         <router-link to="/" class="flex items-center shrink-0">
-          <img src="/images/header-logo.png" alt="Canbest Logo" class="h-9 w-auto mr-2" />
+          <img src="/images/header-logo.png" alt="Pixanta Logo" class="h-9 w-auto mr-2" />
         </router-link>
 
         <div class="flex items-center gap-3">

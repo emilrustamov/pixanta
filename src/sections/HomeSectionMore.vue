@@ -25,21 +25,13 @@ const isOpen = ref(false)
         <div v-show="isOpen" class="overflow-hidden">
           <div class="px-6 pt-8">
             <div class="max-w-[1500px] space-y-10 font-simple font-light text-[20px] leading-relaxed text-text/70">
-              <p>
-                As a trusted provider of innovative one-stop LED display solutions, Canbest LED has been at the forefront of the LED industry since 2008. Our displays cover a wide range of applications including DOOH, commercial display, staging & rentals, virtual production, stadium display and bespoke solution. We bring creative visions to life, so whatever your expected vision is, our solutions are here designed to fit.
-              </p>
+              <p> As a trusted provider of innovative one-stop LED display solutions, PIXANTA has been at the forefront of the LED industry since 2012. Headquartered in Shenzhen, we are a national high-tech enterprise specializing in R&D, production, and sales. Our displays cover a wide range of applications including outdoor advertising, commercial real estate, staging & rentals, sports facilities, transportation platforms, and smart cities. We bring creative visions to life, designing tailored solutions to fit your exact needs. </p>
 
-              <p>
-                Also, as the verified pro supplier of Alibaba, we are eager to assist you every step of the way. We keep products inventory for 7 days fast delivery, and provide the pioneering 5 years warranty to keep you worry-free. Meanwhile we have professional service team for 24/7 online technical support and local on-site installation service.
-              </p>
+              <p> Operating advanced, fully automated production lines in Shenzhen, Huizhou, and Zhongshan, our monthly production capacity for standard outdoor LED screens exceeds 10,000 square meters. Through an integrated production chain, we ensure reliable quality and fast delivery. We are dedicated to providing global customers with professional pre-sales and after-sales support, establishing a premium 4S service model to keep your projects running smoothly and worry-free. </p>
 
-              <p>
-                Till now Canbest has obtained ISO 9001 Quality Management System, ISO14001 Environmental Management System, OHSAS 18001 Health and Safety Management System. All our products are with CCC, CE, FCC, Rohs certificate for global market. And successfully been delivered more than 10000+ installations in over 120 countries.
-              </p>
+              <p> Driven by strict quality control, PIXANTA operates state-of-the-art laboratories and holds over ten utility model and invention patents. We have successfully obtained ISO9001, ISO14001, and global product certifications including 3C and CE. Backed by a highly qualified management team and top product development specialists, our high-quality displays have been successfully delivered to landmark projects spanning the globe. </p>
 
-              <p>
-                We are dedicated to your project’s small details while keeping our eyes on the big picture. With our LED screen, you can boost your brand’s reputation, credibility, and revenue easily.
-              </p>
+              <p> We are dedicated to your project’s small details while keeping our eyes on the big picture. Adhering to the concept of sharing brand value, we combine advanced technology with exceptional service to boost your brand’s reputation, credibility, and revenue easily. </p>
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ const getColSpan = (index: number) => {
       <p class="mt-4 font-simple text-text text-[20px] max-w-[1000px] mx-auto font-light">
         Our LED screen solutions are used in a wide range of markets, including retail & hospitality, commercial
         display, rental & staging, DOOH, corporate, command & control rooms, broadcast studio and virtual production
-        and more. Discover the Canbest LED solutions that will meet your demands and check out the possibilities.
+        and more. Discover the PIXANTA LED solutions that will meet your demands and check out the possibilities.
       </p>
     </div>
 

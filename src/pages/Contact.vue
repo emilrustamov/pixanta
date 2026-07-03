@@ -23,7 +23,7 @@ import FormSection from '../sections/FormSection.vue';
         <!-- Левая колонка -->
         <div class="w-full">
           <h2 class="!text-start !text-text">
-            BRING YOUR VISION TO LIFE WITH CANBEST LED!
+            BRING YOUR VISION TO LIFE WITH PIXANTA LED!
           </h2>
 
           <p class="mt-5 md:mt-8 font-simple text-text text-[18px] font-light leading-relaxed">
