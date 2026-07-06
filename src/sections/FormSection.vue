@@ -151,7 +151,16 @@ async function sendForm() {
     body: JSON.stringify(form),
   })
 
-  const data = await response.json()
+  const text = await response.text()
+
+  let data
+
+  try {
+    data = JSON.parse(text)
+  } catch (e) {
+    console.error('NOT JSON RESPONSE:', text)
+    throw new Error('Server returned invalid response')
+  }
 
   if (!response.ok || !data.success) {
     throw new Error(data.message || 'Failed to send form.')
