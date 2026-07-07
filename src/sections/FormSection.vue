@@ -1,302 +1,164 @@
 <script setup lang="ts">
-import { reactive, computed, ref, onMounted } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
-// Добавляем пропсы для гибкости
 interface Props {
-  cols?: 1 | 2; // Количество колонок на десктопе
+  cols?: 1 | 2
 }
 
 const props = withDefaults(defineProps<Props>(), {
   cols: 2
 })
 
-type FormData = {
-  name: string
-  company: string
-  email: string
-  phone: string
-  message: string
-  website: string
-}
-
-type FormErrors = Partial<Record<keyof FormData, string>>
-
-  const csrfToken = ref('')
-const generateCsrfToken = async () => {
-  try {
-    const response = await fetch('/api/csrf-token.php', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    const data = await response.json()
-    csrfToken.value = data.token
-  } catch (error) {
-    console.error('Failed to get CSRF token:', error)
-  }
-}
-
-onMounted(() => {
-  generateCsrfToken()
-})
-
-const form = reactive<FormData>({
+const form = reactive({
   name: '',
   company: '',
   email: '',
   phone: '',
   message: '',
-  website: '',
 })
 
-const errors = reactive<FormErrors>({
-  name: '',
-  company: '',
-  email: '',
-  phone: '',
-  message: '',
-  website: '',
-})
+const loading = ref(false)
+const success = ref(false)
+const error = ref('')
 
-const touched = reactive<Record<keyof FormData, boolean>>({
-  name: false,
-  company: false,
-  email: false,
-  phone: false,
-  message: false,
-  website: false,
-})
-
-const isSubmitting = reactive({
-  value: false,
-})
-
-const successMessage = reactive({
-  value: '',
-})
-
-// Динамический класс для сетки в зависимости от пропса cols
 const gridClass = computed(() => {
   return props.cols === 1
     ? 'grid-cols-1 gap-y-4'
     : 'grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-10 md:gap-y-12'
 })
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const phoneRegex = /^[+]?[0-9\s\-()]{7,20}$/
-
-function validateField(field: keyof FormData): boolean {
-  const value = form[field].trim()
-  errors[field] = ''
-
-  if (field === 'name') {
-    if (!value) {
-      errors.name = 'Name is required.'
-      return false
-    }
-    if (value.length < 2) {
-      errors.name = 'Name must be at least 2 characters.'
-      return false
-    }
-  }
-
-  if (field === 'email') {
-    if (!value) {
-      errors.email = 'Email is required.'
-      return false
-    }
-    if (!emailRegex.test(value)) {
-      errors.email = 'Please enter a valid email.'
-      return false
-    }
-  }
-
-  if (field === 'phone') {
-    if (!value) {
-      errors.phone = 'Phone is required.'
-      return false
-    }
-    if (!phoneRegex.test(value)) {
-      errors.phone = 'Please enter a valid phone number.'
-      return false
-    }
-  }
-
-  if (field === 'message') {
-    if (!value) {
-      errors.message = 'Message is required.'
-      return false
-    }
-    if (value.length < 10) {
-      errors.message = 'Message must be at least 10 characters.'
-      return false
-    }
-  }
-
-  return true
-}
-
-function handleBlur(field: keyof FormData) {
-  touched[field] = true
-  validateField(field)
-}
-
-function validateForm(): boolean {
-  const requiredFields: (keyof FormData)[] = ['name', 'email', 'phone', 'message']
-  let isValid = true
-
-  requiredFields.forEach((field) => {
-    touched[field] = true
-    if (!validateField(field)) {
-      isValid = false
-    }
-  })
-
-  return isValid
-}
-
-function resetForm() {
-  Object.keys(form).forEach(key => (form[key as keyof FormData] = ''))
-  Object.keys(errors).forEach(key => (errors[key as keyof FormErrors] = ''))
-  Object.keys(touched).forEach(key => (touched[key as keyof FormData] = false))
-}
-
-async function sendForm() {
-  // Проверка honeypot
-  if (form.website) {
-    throw new Error('Bot detected')
-  }
-
-  // Проверка CSRF токена
-  if (!csrfToken.value) {
-    throw new Error('Security token not loaded. Please refresh the page.')
-  }
-
-  // Подготовка данных для отправки
-  const formDataToSend = {
-    name: form.name.trim(),
-    company: form.company.trim(),
-    email: form.email.trim(),
-    phone: form.phone.trim(),
-    message: form.message.trim(),
-    website: form.website.trim(),
-    csrf_token: csrfToken.value,     // ← ДОБАВИЛИ
-    timestamp: Date.now(),           // ← ДОБАВИЛИ
-  }
-
-  const response = await fetch('/contact.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': csrfToken.value,  // ← ДОБАВИЛИ
-    },
-    body: JSON.stringify(formDataToSend),  // ← Используем новые данные
-  })
-
-  const text = await response.text()
-
-  let data
-
-  try {
-    data = JSON.parse(text)
-  } catch (e) {
-    console.error('NOT JSON RESPONSE:', text)
-    throw new Error('Server returned invalid response')
-  }
-
-  if (!response.ok || !data.success) {
-    throw new Error(data.message || 'Failed to send form.')
-  }
-
-  return data
-}
-
 async function handleSubmit() {
-  if (isSubmitting.value) return
+  if (loading.value) return
 
-  successMessage.value = ''
-
-  if (!validateForm()) return
+  loading.value = true
+  success.value = false
+  error.value = ''
 
   try {
-    isSubmitting.value = true
+    // 👇 ЗАМЕНИТЕ НА ВАШ URL ИЗ FORMSPREE
+    const response = await fetch('https://formspree.io/f/xbdvbpzo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: form.name,
+        company: form.company,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      }),
+    })
 
-    const data = await sendForm()
-
-    successMessage.value = data.message
-
-    resetForm()
-  } catch (error) {
-    console.error('Submit error:', error)
-
-    successMessage.value =
-      error instanceof Error
-        ? error.message
-        : 'Something went wrong.'
+    if (response.ok) {
+      success.value = true
+      form.name = ''
+      form.company = ''
+      form.email = ''
+      form.phone = ''
+      form.message = ''
+    } else {
+      const data = await response.json()
+      throw new Error(data.error || 'Submission failed')
+    }
+  } catch (err) {
+    error.value = 'Something went wrong. Please try again.'
+    console.error('Form error:', err)
   } finally {
-    isSubmitting.value = false
+    loading.value = false
   }
 }
 </script>
 
 <template>
   <section class="w-full">
-    <div class="mx-auto w-full max-w-[1600px] ">
+    <div class="mx-auto w-full max-w-[1600px]">
       <div :class="props.cols === 2 ? 'max-w-[920px]' : 'max-w-full'" class="w-full min-w-0">
-        <form :class="gridClass" class="grid" @submit.prevent="handleSubmit">
-          <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off" class="hidden"
-            aria-hidden="true" />
+        <!-- Успех -->
+        <div 
+          v-if="success" 
+          class="mb-6 rounded-lg border border-green-500 bg-green-50 p-4 text-green-700"
+        >
+          ✅ Thank you! Your message has been sent successfully.
+        </div>
+
+        <!-- Ошибка -->
+        <div 
+          v-if="error" 
+          class="mb-6 rounded-lg border border-red-500 bg-red-50 p-4 text-red-700"
+        >
+          ❌ {{ error }}
+        </div>
+
+        <!-- Форма -->
+        <form 
+          v-if="!success"
+          :class="gridClass" 
+          class="grid" 
+          @submit.prevent="handleSubmit"
+        >
           <!-- Name -->
           <div class="w-full min-w-0">
-            <input v-model="form.name" type="text" placeholder="Name"
+            <input
+              v-model="form.name"
+              type="text"
+              placeholder="Name *"
+              required
               class="h-[52px] w-full rounded-[10px] border border-[#d3d3d3] bg-white px-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
-              :class="{ '!border-red-500': touched.name && errors.name }" @blur="handleBlur('name')"
-              @input="validateField('name')" />
-            <p v-if="touched.name && errors.name" class="mt-2 text-sm text-red-500">{{ errors.name }}</p>
+            />
           </div>
 
           <!-- Company -->
           <div class="w-full min-w-0">
-            <input v-model="form.company" type="text" placeholder="Company"
-              class="h-[52px] w-full rounded-[10px] border border-[#d3d3d3] bg-white px-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]" />
+            <input
+              v-model="form.company"
+              type="text"
+              placeholder="Company"
+              class="h-[52px] w-full rounded-[10px] border border-[#d3d3d3] bg-white px-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
+            />
           </div>
 
           <!-- Email -->
           <div class="w-full min-w-0">
-            <input v-model="form.email" type="email" placeholder="*Email"
+            <input
+              v-model="form.email"
+              type="email"
+              placeholder="*Email *"
+              required
               class="h-[52px] w-full rounded-[10px] border border-[#d3d3d3] bg-white px-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
-              :class="{ '!border-red-500': touched.email && errors.email }" @blur="handleBlur('email')"
-              @input="validateField('email')" />
-            <p v-if="touched.email && errors.email" class="mt-2 text-sm text-red-500">{{ errors.email }}</p>
+            />
           </div>
 
           <!-- Phone -->
           <div class="w-full min-w-0">
-            <input v-model="form.phone" type="tel" placeholder="Phone"
+            <input
+              v-model="form.phone"
+              type="tel"
+              placeholder="Phone"
               class="h-[52px] w-full rounded-[10px] border border-[#d3d3d3] bg-white px-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
-              :class="{ '!border-red-500': touched.phone && errors.phone }" @blur="handleBlur('phone')"
-              @input="validateField('phone')" />
-            <p v-if="touched.phone && errors.phone" class="mt-2 text-sm text-red-500">{{ errors.phone }}</p>
+            />
           </div>
 
           <!-- Message -->
           <div class="w-full min-w-0" :class="{ 'md:col-span-2': props.cols === 2 }">
-            <textarea v-model="form.message" placeholder="*Message"
-              class="min-h-[185px]  max-h-[300px] w-full rounded-[10px] border border-[#d3d3d3] bg-white p-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
-              :class="{ '!border-red-500': touched.message && errors.message }" @blur="handleBlur('message')"
-              @input="validateField('message')" />
-            <p v-if="touched.message && errors.message" class="mt-2 text-sm text-red-500">{{ errors.message }}</p>
+            <textarea
+              v-model="form.message"
+              placeholder="*Message *"
+              required
+              class="min-h-[185px] max-h-[300px] w-full rounded-[10px] border border-[#d3d3d3] bg-white p-4 text-[16px] text-[#666666] outline-none transition focus:border-[#24479c]"
+            />
           </div>
 
           <!-- Button -->
-          <div class="" :class="{ 'md:col-span-2': props.cols === 2 }">
-            <button type="submit"
+          <div :class="{ 'md:col-span-2': props.cols === 2 }">
+            <button
+              type="submit"
+              :disabled="loading"
               class="flex h-[52px] min-w-[110px] items-center justify-center rounded-[10px] bg-primary px-8 text-[24px] font-main font-semibold uppercase text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
-              :disabled="isSubmitting.value">
-              {{ isSubmitting.value ? 'Sending...' : 'Submit' }}
+            >
+              {{ loading ? 'Sending...' : 'Submit' }}
             </button>
-            <p v-if="successMessage.value" class="mt-3 text-sm text-green-600">{{ successMessage.value }}</p>
           </div>
         </form>
       </div>
