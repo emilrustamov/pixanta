@@ -50,7 +50,7 @@ declare global {
 window.onRecaptchaVerify = (token: string) => {
   recaptchaToken.value = token
   isVerified.value = true
-  console.log('✅ reCAPTCHA проверена')
+  // console.log('✅ reCAPTCHA проверена')
 }
 
 window.onRecaptchaExpired = () => {
@@ -145,7 +145,7 @@ async function handleSubmit() {
 
 onMounted(() => {
   console.log('✅ Компонент формы загружен')
-  console.log('reCAPTCHA site key:', RECAPTCHA_SITE_KEY)
+  // console.log('reCAPTCHA site key:', RECAPTCHA_SITE_KEY)
 })
 </script>
 
