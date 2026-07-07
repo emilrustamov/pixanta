@@ -36,7 +36,7 @@ async function handleSubmit() {
 
   try {
     // 👇 ЗАМЕНИТЕ НА ВАШ URL ИЗ FORMSPREE
-    const response = await fetch('https://formspree.io/f/xbdvbpzo', {
+    const response = await fetch('https://formspree.io/f/xbdvbqld', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
