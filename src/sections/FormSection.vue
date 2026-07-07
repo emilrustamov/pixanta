@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, computed } from 'vue'
+import { reactive, computed, ref, onMounted } from 'vue'
 
 // Добавляем пропсы для гибкости
 interface Props {
@@ -20,6 +20,26 @@ type FormData = {
 }
 
 type FormErrors = Partial<Record<keyof FormData, string>>
+
+  const csrfToken = ref('')
+const generateCsrfToken = async () => {
+  try {
+    const response = await fetch('/api/csrf-token.php', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await response.json()
+    csrfToken.value = data.token
+  } catch (error) {
+    console.error('Failed to get CSRF token:', error)
+  }
+}
+
+onMounted(() => {
+  generateCsrfToken()
+})
 
 const form = reactive<FormData>({
   name: '',
@@ -143,12 +163,35 @@ function resetForm() {
 }
 
 async function sendForm() {
+  // Проверка honeypot
+  if (form.website) {
+    throw new Error('Bot detected')
+  }
+
+  // Проверка CSRF токена
+  if (!csrfToken.value) {
+    throw new Error('Security token not loaded. Please refresh the page.')
+  }
+
+  // Подготовка данных для отправки
+  const formDataToSend = {
+    name: form.name.trim(),
+    company: form.company.trim(),
+    email: form.email.trim(),
+    phone: form.phone.trim(),
+    message: form.message.trim(),
+    website: form.website.trim(),
+    csrf_token: csrfToken.value,     // ← ДОБАВИЛИ
+    timestamp: Date.now(),           // ← ДОБАВИЛИ
+  }
+
   const response = await fetch('/contact.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken.value,  // ← ДОБАВИЛИ
     },
-    body: JSON.stringify(form),
+    body: JSON.stringify(formDataToSend),  // ← Используем новые данные
   })
 
   const text = await response.text()
