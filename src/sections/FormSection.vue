@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted, nextTick } from 'vue'
 import emailjs from '@emailjs/browser'
-
 
 // --- EmailJS Configuration ---
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -23,15 +22,16 @@ const form = reactive({
   email: '',
   phone: '',
   message: '',
-  honeypot:''
+  honeypot: ''
 })
 
 const loading = ref(false)
 const success = ref(false)
 const error = ref('')
-
-const recaptchaToken = ref('')   // ← ДОБАВЛЕНО!
-const isVerified = ref(false) 
+const recaptchaToken = ref('')
+const isVerified = ref(false)
+const isRecaptchaLoaded = ref(false)
+const recaptchaContainerId = ref('')
 
 const gridClass = computed(() => {
   return props.cols === 1
@@ -50,7 +50,7 @@ declare global {
 window.onRecaptchaVerify = (token: string) => {
   recaptchaToken.value = token
   isVerified.value = true
-  // console.log('✅ reCAPTCHA проверена')
+  console.log('✅ reCAPTCHA проверена')
 }
 
 window.onRecaptchaExpired = () => {
@@ -59,31 +59,25 @@ window.onRecaptchaExpired = () => {
   console.warn('⚠️ reCAPTCHA токен истёк')
 }
 
-
 async function handleSubmit() {
-  // Проверка: если уже отправляется - выходим
-  if (loading.value) {
-    return
-  }
+  if (loading.value) return
+
   if (form.honeypot) {
     console.warn('🤖 Бот обнаружен!')
     return
   }
 
-  // ✅ Проверка reCAPTCHA
   if (!isVerified.value) {
     error.value = 'Пожалуйста, подтвердите, что вы не робот'
     setTimeout(() => { error.value = '' }, 5000)
     return
   }
 
-  // Устанавливаем состояние загрузки
   loading.value = true
   success.value = false
   error.value = ''
 
   try {
-    // --- ОТПРАВКА ЧЕРЕЗ EMAILJS ---
     const result = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
@@ -98,14 +92,12 @@ async function handleSubmit() {
       PUBLIC_KEY
     )
 
-    // Проверка: успешно ли отправлено
     if (result.status === 200) {
-      // УСПЕХ
       success.value = true
       error.value = ''
       isVerified.value = false
       recaptchaToken.value = ''
-      // Очищаем форму
+      
       form.name = ''
       form.company = ''
       form.email = ''
@@ -117,35 +109,78 @@ async function handleSubmit() {
         window.grecaptcha.reset()
       }
 
-      // Скрываем уведомление через 5 секунд
       setTimeout(() => {
         success.value = false
       }, 5000)
     } else {
-      // Если статус не 200 - ошибка
       throw new Error('Failed to send message')
     }
 
   } catch (err) {
-    // --- ОБРАБОТКА ОШИБКИ ---
     console.error('EmailJS error:', err)
-    success.value = false
     error.value = 'Something went wrong. Please try again.'
     
-    // Скрываем ошибку через 5 секунд
     setTimeout(() => {
       error.value = ''
     }, 5000)
-
   } finally {
-    // --- ВСЕГДА ВЫПОЛНЯЕТСЯ ---
     loading.value = false
   }
 }
 
-onMounted(() => {
+// ✅ ИСПРАВЛЕННАЯ ИНИЦИАЛИЗАЦИЯ
+onMounted(async () => {
   console.log('✅ Компонент формы загружен')
-  // console.log('reCAPTCHA site key:', RECAPTCHA_SITE_KEY)
+  
+  // Ждём, пока DOM обновится
+  await nextTick()
+  
+  // Генерируем ID ДО рендеринга
+  recaptchaContainerId.value = 'recaptcha-' + Math.random().toString(36).substr(2, 9)
+  
+  // Ждём, пока элемент появится в DOM
+  await nextTick()
+  
+  // Проверяем, что контейнер существует
+  const container = document.getElementById(recaptchaContainerId.value)
+  
+  if (container && typeof window.grecaptcha !== 'undefined') {
+    try {
+      window.grecaptcha.render(recaptchaContainerId.value, {
+        sitekey: RECAPTCHA_SITE_KEY,
+        callback: window.onRecaptchaVerify,
+        'expired-callback': window.onRecaptchaExpired,
+        theme: 'light',
+        size: 'normal'
+      })
+      
+      isRecaptchaLoaded.value = true
+      console.log('✅ reCAPTCHA инициализирована в контейнере:', recaptchaContainerId.value)
+    } catch (err) {
+      console.error('❌ Ошибка рендеринга reCAPTCHA:', err)
+    }
+  } else {
+    console.warn('⚠️ Контейнер не найден или grecaptcha не загружена')
+    
+    // Повторная попытка через 2 секунды
+    setTimeout(() => {
+      const container2 = document.getElementById(recaptchaContainerId.value)
+      if (container2 && typeof window.grecaptcha !== 'undefined') {
+        try {
+          window.grecaptcha.render(recaptchaContainerId.value, {
+            sitekey: RECAPTCHA_SITE_KEY,
+            callback: window.onRecaptchaVerify,
+            'expired-callback': window.onRecaptchaExpired,
+            theme: 'light'
+          })
+          isRecaptchaLoaded.value = true
+          console.log('✅ reCAPTCHA инициализирована (повторная попытка)')
+        } catch (err) {
+          console.error('❌ Ошибка повторного рендеринга:', err)
+        }
+      }
+    }, 2000)
+  }
 })
 </script>
 
@@ -228,6 +263,7 @@ onMounted(() => {
             />
           </div>
 
+          <!-- Honeypot -->
           <div style="display: none; position: absolute; left: -9999px;">
             <input 
               type="text" 
@@ -238,14 +274,12 @@ onMounted(() => {
             />
           </div>
 
+          <!-- ✅ reCAPTCHA -->
           <div :class="{ 'md:col-span-2': props.cols === 2 }" class="w-full min-w-0">
-            <div 
-              class="g-recaptcha"
-              :data-sitekey="RECAPTCHA_SITE_KEY"
-              data-callback="onRecaptchaVerify"
-              data-expired-callback="onRecaptchaExpired"
-              data-theme="light"
-            ></div>
+            <div v-if="!isRecaptchaLoaded" class="py-4 text-gray-500">
+              loading...
+            </div>
+            <div :id="recaptchaContainerId" class="w-full min-h-[78px]"></div>
           </div>
 
           <!-- Button -->
