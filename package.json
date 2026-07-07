@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.2.1",
     "swiper": "^12.1.2",
     "tailwindcss": "^4.2.1",
