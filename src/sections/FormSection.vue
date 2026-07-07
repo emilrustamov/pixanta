@@ -105,7 +105,7 @@ async function handleSubmit() {
       form.message = ''
       form.honeypot = ''
 
-      if (window.grecaptcha) {
+      if (window.grecaptcha && window.grecaptcha.reset) {
         window.grecaptcha.reset()
       }
 
@@ -128,23 +128,25 @@ async function handleSubmit() {
   }
 }
 
-// ✅ ИСПРАВЛЕННАЯ ИНИЦИАЛИЗАЦИЯ
+// ✅ ИСПРАВЛЕННАЯ ИНИЦИАЛИЗАЦИЯ С grecaptcha.ready()
 onMounted(async () => {
   console.log('✅ Компонент формы загружен')
   
-  // Ждём, пока DOM обновится
   await nextTick()
   
-  // Генерируем ID ДО рендеринга
   recaptchaContainerId.value = 'recaptcha-' + Math.random().toString(36).substr(2, 9)
   
-  // Ждём, пока элемент появится в DOM
   await nextTick()
   
-  // Проверяем, что контейнер существует
-  const container = document.getElementById(recaptchaContainerId.value)
-  
-  if (container && typeof window.grecaptcha !== 'undefined') {
+  // Функция для рендеринга
+  function renderRecaptcha() {
+    const container = document.getElementById(recaptchaContainerId.value)
+    if (!container) {
+      console.warn('⚠️ Контейнер не найден, повтор через 500ms')
+      setTimeout(renderRecaptcha, 500)
+      return
+    }
+    
     try {
       window.grecaptcha.render(recaptchaContainerId.value, {
         sitekey: RECAPTCHA_SITE_KEY,
@@ -155,31 +157,35 @@ onMounted(async () => {
       })
       
       isRecaptchaLoaded.value = true
-      console.log('✅ reCAPTCHA инициализирована в контейнере:', recaptchaContainerId.value)
+      console.log(' reCAPTCHA инициализирована в контейнере:', recaptchaContainerId.value)
     } catch (err) {
-      console.error('❌ Ошибка рендеринга reCAPTCHA:', err)
+      console.error(' Ошибка рендеринга reCAPTCHA:', err)
+      setTimeout(renderRecaptcha, 1000)
     }
+  }
+  
+  // ✅ Ждём, пока grecaptcha будет готов
+  if (typeof window.grecaptcha !== 'undefined') {
+    window.grecaptcha.ready(() => {
+      console.log('✅ grecaptcha готов к использованию')
+      renderRecaptcha()
+    })
   } else {
-    console.warn('⚠️ Контейнер не найден или grecaptcha не загружена')
-    
-    // Повторная попытка через 2 секунды
-    setTimeout(() => {
-      const container2 = document.getElementById(recaptchaContainerId.value)
-      if (container2 && typeof window.grecaptcha !== 'undefined') {
-        try {
-          window.grecaptcha.render(recaptchaContainerId.value, {
-            sitekey: RECAPTCHA_SITE_KEY,
-            callback: window.onRecaptchaVerify,
-            'expired-callback': window.onRecaptchaExpired,
-            theme: 'light'
-          })
-          isRecaptchaLoaded.value = true
-          console.log('✅ reCAPTCHA инициализирована (повторная попытка)')
-        } catch (err) {
-          console.error('❌ Ошибка повторного рендеринга:', err)
-        }
+    console.warn('⚠️ grecaptcha не загружена, ждём...')
+    let attempts = 0
+    const checkInterval = setInterval(() => {
+      attempts++
+      if (typeof window.grecaptcha !== 'undefined' && window.grecaptcha.ready) {
+        clearInterval(checkInterval)
+        window.grecaptcha.ready(() => {
+          console.log('✅ grecaptcha готов к использованию (после ожидания)')
+          renderRecaptcha()
+        })
+      } else if (attempts > 30) {
+        clearInterval(checkInterval)
+        console.error('❌ grecaptcha не загрузилась за 15 секунд')
       }
-    }, 2000)
+    }, 500)
   }
 })
 </script>
@@ -193,7 +199,7 @@ onMounted(async () => {
           v-if="success" 
           class="mb-6 rounded-lg border border-green-500 bg-green-50 p-4 text-green-700"
         >
-          Thank you! Your message has been sent successfully.
+           Thank you! Your message has been sent successfully.
         </div>
 
         <!-- Ошибка -->
@@ -201,7 +207,7 @@ onMounted(async () => {
           v-if="error" 
           class="mb-6 rounded-lg border border-red-500 bg-red-50 p-4 text-red-700"
         >
-          {{ error }}
+           {{ error }}
         </div>
 
         <!-- Форма -->
