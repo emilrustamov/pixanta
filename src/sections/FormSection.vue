@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import emailjs from '@emailjs/browser'
+
 
 // --- EmailJS Configuration ---
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
 interface Props {
   cols?: 1 | 2
@@ -21,11 +23,15 @@ const form = reactive({
   email: '',
   phone: '',
   message: '',
+  honeypot:''
 })
 
 const loading = ref(false)
 const success = ref(false)
 const error = ref('')
+
+const recaptchaToken = ref('')   // ← ДОБАВЛЕНО!
+const isVerified = ref(false) 
 
 const gridClass = computed(() => {
   return props.cols === 1
@@ -33,9 +39,41 @@ const gridClass = computed(() => {
     : 'grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-10 md:gap-y-12'
 })
 
+declare global {
+  interface Window {
+    onRecaptchaVerify: (token: string) => void
+    onRecaptchaExpired: () => void
+    grecaptcha: any
+  }
+}
+
+window.onRecaptchaVerify = (token: string) => {
+  recaptchaToken.value = token
+  isVerified.value = true
+  console.log('✅ reCAPTCHA проверена')
+}
+
+window.onRecaptchaExpired = () => {
+  recaptchaToken.value = ''
+  isVerified.value = false
+  console.warn('⚠️ reCAPTCHA токен истёк')
+}
+
+
 async function handleSubmit() {
   // Проверка: если уже отправляется - выходим
   if (loading.value) {
+    return
+  }
+  if (form.honeypot) {
+    console.warn('🤖 Бот обнаружен!')
+    return
+  }
+
+  // ✅ Проверка reCAPTCHA
+  if (!isVerified.value) {
+    error.value = 'Пожалуйста, подтвердите, что вы не робот'
+    setTimeout(() => { error.value = '' }, 5000)
     return
   }
 
@@ -55,6 +93,7 @@ async function handleSubmit() {
         email: form.email,
         phone: form.phone,
         message: form.message,
+        'g-recaptcha-response': recaptchaToken.value
       },
       PUBLIC_KEY
     )
@@ -64,13 +103,19 @@ async function handleSubmit() {
       // УСПЕХ
       success.value = true
       error.value = ''
-      
+      isVerified.value = false
+      recaptchaToken.value = ''
       // Очищаем форму
       form.name = ''
       form.company = ''
       form.email = ''
       form.phone = ''
       form.message = ''
+      form.honeypot = ''
+
+      if (window.grecaptcha) {
+        window.grecaptcha.reset()
+      }
 
       // Скрываем уведомление через 5 секунд
       setTimeout(() => {
@@ -97,6 +142,11 @@ async function handleSubmit() {
     loading.value = false
   }
 }
+
+onMounted(() => {
+  console.log('✅ Компонент формы загружен')
+  console.log('reCAPTCHA site key:', RECAPTCHA_SITE_KEY)
+})
 </script>
 
 <template>
@@ -178,11 +228,31 @@ async function handleSubmit() {
             />
           </div>
 
+          <div style="display: none; position: absolute; left: -9999px;">
+            <input 
+              type="text" 
+              v-model="form.honeypot" 
+              tabindex="-1" 
+              autocomplete="off"
+              placeholder="Не заполняйте это поле"
+            />
+          </div>
+
+          <div :class="{ 'md:col-span-2': props.cols === 2 }" class="w-full min-w-0">
+            <div 
+              class="g-recaptcha"
+              :data-sitekey="RECAPTCHA_SITE_KEY"
+              data-callback="onRecaptchaVerify"
+              data-expired-callback="onRecaptchaExpired"
+              data-theme="light"
+            ></div>
+          </div>
+
           <!-- Button -->
           <div :class="{ 'md:col-span-2': props.cols === 2 }">
             <button
               type="submit"
-              :disabled="loading"
+              :disabled="loading || !isVerified"
               class="flex h-[52px] min-w-[110px] items-center justify-center rounded-[10px] bg-primary px-8 text-[24px] font-main font-semibold uppercase text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {{ loading ? 'Sending...' : 'Submit' }}
